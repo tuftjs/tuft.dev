@@ -93,7 +93,7 @@ header {
   color: #eee;
   text-align: center;
   margin: auto;
-  padding: 0 25px 100px 25px;
+  padding: 0 25px 25px 25px;
   max-width: 630px;
   max-height: 300px;
   text-shadow: 0 0 4px #555;
@@ -553,4 +553,17 @@ h3 .code-plain {
 
 #about-main p {
   margin: 10px 0;
+}
+
+#intro-code-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+#intro-code-container code {
+  background-color: #2227;
+  font-size: 1rem;
+  color: #fff;
+  padding: 4px 18px;
 }
