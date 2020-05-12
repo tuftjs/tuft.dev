@@ -1,7 +1,5 @@
 title: "Tuft"
 
-source: "src"
-
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
