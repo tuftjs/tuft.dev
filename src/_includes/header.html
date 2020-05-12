@@ -1,0 +1,20 @@
+<header>
+  <div class="logo">
+    <h2 id="logo-text">Tuft</h2>
+    <div id="version-container">
+      <a id="nav-link-version" class="nav-link" href="https://github.com/tuftjs/tuft/releases" target="_blank">v1.0.0-alpha.4</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      {% for item in site.data.nav %}
+        <li>
+          <a href="{{ item.link }}" {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="nav-link current"{% else %}class="nav-link"{% endif %}>
+            {{ item.name }}
+          </a>
+        </li>
+      {% endfor %}
+      <li><a id="nav-link-github" class="nav-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;<img src="/assets/images/open_in_new-black-18dp.svg" alt="Open GitHub link in new window"></a></li>
+    </ul>
+  </nav>
+</header>

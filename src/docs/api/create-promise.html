@@ -1,0 +1,31 @@
+---
+layout: default
+title: Tuft
+docs: true
+---
+<div id="main-margin-left"></div>
+<main id="main">
+  {% include docs_nav.html %}
+  <section id="content">
+    <h1>createPromise(function)</h1>
+    <p>Tuft is a promise-based framework and thus does not support callback-based functions. <strong>createPromise</strong> is exported by the library as a convenience for converting a callback-based function to one that returns a promise.</p>
+    <p>It accepts a <code class="code-inline">function</code> that receives an error-first callback as its first and only argument. If the callback is then invoked with an error as its first argument, the promise will reject with that error. Otherwise, the promise will be resolved with any remaining arguments being returned as an array.</p>
+    <pre><code class="language-js">const { createPromise } = require('tuft')
+const { stat } = require('fs')
+
+async function callStat() {
+  try {
+    const [stats] = await createPromise(done => {
+      stat('.', done)
+    })
+
+    console.log(`This directory is owned by ${stats.uid}`)
+  }
+
+  catch (err) {
+    console.error(err)
+  }
+}</code></pre>
+  </section>
+</main>
+<div id="main-margin-right"></div>

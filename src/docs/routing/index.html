@@ -1,0 +1,38 @@
+---
+layout: default
+title: Tuft
+docs: true
+---
+<div id="main-margin-left"></div>
+<main id="main">
+  {% include docs_nav.html %}
+  <section id="content">
+    <h1>Routing</h1>
+    <p>Tuft is a route-based framework similar to <a href="https://hapi.dev" target="_blank">hapi</a>. When a client requests a particular path, a Tuft server will first determine if there is a route that matches that path. If there is, Tuft will generate a response based on a user-defined handler.</p>
+
+    <p>To add a route, call the route map's <code class="code-inline">.set()</code> method:</p>
+
+    <pre><code class="language-js">app.set('/foo', { status: 200 })</code></pre>
+
+    <p>In the above example, whenever a client submits a request with the path <code class="code-inline">'/foo'</code>, the server will respond with a <code class="http-status">200 OK</code> status code and no body.</p>
+
+    <p>To add a route that only responds to a specific request method, prepend the path with the request method and a space:</p>
+
+    <pre><code class="language-js">app.set('GET /foo', { status: 200 })</code></pre>
+
+    <p>See the <a href="/docs/api/tuft-route-map">TuftRouteMap</a> API section for more information on adding routes.</p>
+
+    <h3 class="api-sub-heading">⭐ Custom 404 handling</h3>
+
+    <p>If a client requests a route that doesn't exist, the server will respond to the client with a <code class="http-status">404 Not Found</code> status code. You can override this behavior, or customize the 404 response, by adding a 'catch-all' route:</p>
+
+    <pre><code class="language-js">app.set('/{**}', {
+  status: 404,
+  json: {
+    message: 'Not Found'
+  }
+})</code></pre>
+  <p>The <code class="code-inline">'{**}'</code> in the path of the example above is a wildcard glob that matches all text, including the text of sub-paths. Therefore, adding a route of <code class="code-inline">'/{**}'</code> with no other path segments will match all routes that have not already been matched by a more specific route.</p>
+  </section>
+</main>
+<div id="main-margin-right"></div>

@@ -1,0 +1,50 @@
+---
+layout: default
+title: Tuft
+docs: true
+---
+<div id="main-margin-left"></div>
+<main id="main">
+  {% include docs_nav.html %}
+  <section id="content">
+    <h1>TuftServer</h1>
+    <p>An instance of <strong>TuftServer</strong> is returned whenever the <code class="code-inline">.createServer()</code> method of <a href="/docs/api/tuft-route-map">TuftRouteMap</a> is called.</p>
+
+    <h3 class="api-sub-heading">⭐ Methods</h3>
+
+    <div class="api-entry">
+      <h3><code>.start()</code></h3>
+      <p>Returns a promise that resolves once the server has started.</p>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.stop()</code></h3>
+      <p>Returns a promise that resolves once all current connections have been closed and the server has stopped.</p>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.setTimeout([msecs][, callback])</code></h3>
+      <p>Sets the timeout value (a number) in milliseconds for requests to the server. The provided <code class="code-inline">callback</code> is invoked whenever the timeout value is reached.</p>
+      <p>By default, <code class="code-inline">msecs</code> is <code class="code-inline">0</code> (no timeout).</p>
+      <p>Throws an error if the provided <code class="code-inline">callback</code> is not a function.</p>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.address()</code></h3>
+      <p>If called while the server is running, returns an object containing data about the current server, such as the IP address and port number the server is listening on.</p>
+    </div>
+
+    <h3 class="api-sub-heading">⭐ Properties</h3>
+
+    <div class="api-entry">
+      <h3><code>host</code> <code class="code-plain">string</code></h3>
+      <p>The IP address or hostname that the server will listen on when it's running.</p>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>port</code> <code class="code-plain">number</code></h3>
+      <p>The port that the server will listen on when it's running.</p>
+    </div>
+  </section>
+</main>
+<div id="main-margin-right"></div>

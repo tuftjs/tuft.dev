@@ -1,0 +1,65 @@
+---
+layout: default
+title: Tuft
+docs: true
+---
+<div id="main-margin-left"></div>
+<main id="main">
+  {% include docs_nav.html %}
+  <section id="content">
+    <h1>Response object</h1>
+    <p>The response object is an ordinary JavaScript object with no required properties. When you add a route, you either define a response object, or you define a function that <em>returns</em> a response object (a response <em>handler</em>). Tuft uses the properties and their values of said object to determine how to respond to a client request.</p>
+    <pre><code class="language-js">const response = {
+  status: 200,
+  text: 'Hello, world!'
+}
+
+app.set('GET /', response)
+
+// or
+
+app.set('GET /', () => {
+  return response
+})</code></pre>
+    <p>Tuft is able to handle the following response object properties (all optional):</p>
+    <div class="api-entry">
+      <h3><code>status</code><code class="code-plain">number</code></h3>
+      <p>Sets the <code class="code-inline">':status'</code> header to the given value.</p>
+      <p>Defaults to <code class="code-inline">200</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>error</code><code class="code-plain">string</code></h3>
+      <p>Responds to the client with an HTTP error status code, the value of which is determined by the provided string. The string should be the name of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">HTTP error</a> in all uppercase, with any spaces separated by an underscore.</p>
+      <p>For example, if <code class="code-inline">error</code> is set to <code class="code-inline">'NOT_FOUND'</code>, the server will respond with a <code class="http-status">404 Not Found</code> status code.</p>
+      <p>All valid <code class="code-inline">4xx</code> and <code class="code-inline">5xx</code> codes are supported. If an unsupported string value is provided, then the server will respond with <code class="http-status">400 Bad Request</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>redirect</code><code class="code-plain">string</code></h3>
+      <p>Responds to the client with a <code class="http-status">302 Found</code> status code and a <code class="code-inline">'location'</code> header set to the provided value, which can either be a relative path or an absolute URI.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>raw</code><code class="code-plain">buffer</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/octet-stream'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>text</code><code class="code-plain">string</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>html</code><code class="code-plain">string</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/html'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>json</code><code class="code-plain">object</code></h3>
+      <p>Serializes the provided value to a JSON string, then sets the response body to that string. Adds an outgoing <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/json'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>file</code><code class="code-plain">string</code></h3>
+      <p>Responds to the client with a file, where <code class="code-inline">file</code> is a pathname. Adds an outgoing <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain'</code>.</p>
+    </div>
+    <p>By default, any properties not listed above will be ignored. The <code class="code-inline">status</code> property is the only one that can be used in conjunction with other properties (with the exception of <code class="code-inline">error</code> and <code class="code-inline">redirect</code>).</p>
+    <p>If a response object with none of the supported properties is provided, the server will respond to the client with a <code class="http-status">200 OK</code> status code and no response body.</p>
+    <p>If a Tuft <strong>responder</strong> has been defined on a given route, then it may accept other properties not listed here, or even override them. See the section on <a href="/docs/responders">responders</a> for more information.</p>
+  </section>
+</main>
+<div id="main-margin-right"></div>

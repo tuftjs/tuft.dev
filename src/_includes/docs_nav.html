@@ -1,0 +1,34 @@
+<section id="menu">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    {% for item in site.data.docs_nav.getting_started %}
+      <li>
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
+          {{ item.name }}</a>
+          {% if page.url == item.link %}🚩{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    {% for item in site.data.docs_nav.main_concepts %}
+    <li>
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
+        {{ item.name }}</a>
+
+        {% if page.url == item.link %}🚩{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+  <h4>API</h4>
+  <ul>
+    {% for item in site.data.docs_nav.api %}
+      <li>
+        <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
+          {{ item.name }}</a>
+
+          {% if page.url == item.link %}🚩{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>

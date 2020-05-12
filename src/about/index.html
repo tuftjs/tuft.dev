@@ -1,0 +1,30 @@
+---
+layout: default
+title: Tuft
+---
+<div id="main-margin-left"></div>
+<main id="about-main">
+  <h2>👦 Who?</h2>
+  <p>I am a new developer that does not have the professional experience of those behind other common Node libraries and frameworks. As such, Tuft is most certainly not suitable for use in a production environment. It is strictly "pre-release" software that is sure to have its fair share of issues. That said, please play around with it and abuse it as much as you like to find any weaknesses. Bugs and issues can be posted on the <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub repository</a>.</p>
+  <p>Please check out my <a href="https://iamstu.art" target="_blank">website</a> if you would like to find out more about me!</p>
+
+  <h2>🏠 What?</h2>
+  <p>Tuft is an HTTP/2-only web framework for Node.js that has been designed to provide excellent routing performance, even when serving thousands of routes, while maintaining minimal overhead. While it keeps its feature set to a minimum, it provides mechanisms to extend its functionality so that it can be adapted to almost any need.</p>
+
+  <h2>🚀 Why?</h2>
+  <p>Tuft was built with the primary objective of becoming a viable HTTP/2 framework for Node.js. Specifically, it has been built to utilize Node's <a href="https://nodejs.org/dist/latest/docs/api/http2.html#http2_core_api" target="_blank">core HTTP/2 API</a>. Not all of the most commonly used frameworks support HTTP/2, and the ones that do tend to treat it like a second-class citizen by only supporting it via Node's <a href="https://nodejs.org/dist/latest/docs/api/http2.html#http2_compatibility_api" target="_blank">compatibility API</a>.</p>
+  <p>HTTP/2 provides a significant performance increase over HTTP/1, and we are now at a stage where all major browsers support it. By focussing solely on HTTP/2, we can reap its benefits without having to deal with the problems that exist in HTTP/1. Some of these benefits include:</p>
+
+  <ul id="api-list">
+    <li>Minimal overhead via efficient HTTP header compression with <a href="https://tools.ietf.org/html/rfc7541" target="_blank">HPACK</a>.</li>
+    <li>Reduced latency via full request/response multiplexing.</li>
+    <li>Increased security by favoring binary transmission over text.</li>
+    <li>Server push (<em>this feature has not yet been implemented in Tuft, it's on the to-do list!</em>).</li>
+  </ul>
+
+  <p>All of the above is possible while maintaining the core concepts of HTTP, including URIs, status codes, and request methods.</p>
+
+  <h2>🕓 When?</h2>
+  <p>Development of Tuft in its first incarnation started in early 2019 as a part-time project to familiarize myself with the inner workings of Node.js. It has evolved a lot since then, and in recent months I have been working on it full-time to polish it and turn it into something a bit more respectable. That being said, it is very new and has not been tested extensively. However, I do hope that a day may come where someone out there considers it to be ready for a production environment!</p>
+</main>
+<div id="main-margin-right"></div>

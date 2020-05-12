@@ -1,0 +1,56 @@
+---
+layout: default
+title: Tuft
+docs: true
+---
+<div id="main-margin-left"></div>
+<main id="main">
+  {% include docs_nav.html %}
+  <section id="content">
+    <h1>Quick start</h1>
+    <p>Install Tuft via NPM:</p>
+    <pre><code class="language-shell">$ npm install tuft</code></pre>
+    <p>Tuft does not have a default export. Instead, you should start by importing the named <strong>createRouteMap</strong> function:</p>
+    <pre><code class="language-js">const { createRouteMap } = require('tuft')</code></pre>
+    <p>You can then invoke it to create a Tuft "application", which allows you to add routes:</p>
+    <pre><code class="language-js">const app = createRouteMap()
+
+app.set('GET /', {
+  text: 'Hello, world!'
+})</code></pre>
+    <p>The above code will add a single route that responds with the text <code class="code-inline">'Hello, world!'</code> to any GET requests for the path <code class="code-inline">'/'</code>.</p>
+    <p>Once you've finished adding your routes, create a server instance and call its <code class="code-inline">.start()</code> method to fire up your server:</p>
+    <pre><code class="language-js">const server = app.createServer({ port: 3000 })
+
+server.start()</code></pre>
+    <p>Tuft is a promise-based framework, so the above code should be wrapped in an <strong></strong>async</strong> function. Putting it all together yields the following:</p>
+    <pre><code class="language-js">const { createRouteMap } = require('tuft')
+
+async function init() {
+  const app = createRouteMap()
+
+  app.set('GET /', {
+    text: 'Hello, world!'
+  })
+
+  const server = app.createServer({ port: 3000 })
+
+  await server.start()
+
+  console.log(`Server listening at http://${server.host}:${server.port}`)
+}
+
+init()</code></pre>
+    <p>This would ordinarily be the part where we say that if you run your app and visit <code class="code-inline">'http://localhost:3000'</code> in your web browser, you'll see the text <code class="code-inline">'Hello, world!'</code> displayed.</p>
+    <p>Except... you wouldn't!</p>
+    <p>As there are no browsers known to support <em>unencrypted</em> HTTP/2 connections, you would have to use something like the command line client <strong>curl</strong> to access the server in the example above:</p>
+    <pre><code class="language-shell">$ curl --http2-prior-knowledge http://localhost:3000
+Hello, world!</code></pre>
+    <blockquote class="blockquote-note">
+      <p><strong>Note:</strong></p>
+      <p>The <code class="code-inline">--http2-prior-knowledge</code> option is only necessary for this example so that curl doesn't think we're trying to access an HTTP/1 server. It is not necessary when using curl to access a secure HTTP/2 server.</p>
+    </blockquote>
+    <p>Continue to the next section, <a href="/docs/https/">Enabling HTTPS</a>, to see how to access your server from a web browser.</p>
+  </section>
+</main>
+<div id="main-margin-right"></div>
