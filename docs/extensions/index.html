@@ -16,7 +16,7 @@ docs: true
   // my custom middleware logic
 }</code></pre>
 
-    <p>To add a pre-handler to your route map, add it to an array and set that array as the value of the <code class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you call <code class="code-inline">createRouteMap()</code>:</p>
+    <p>To add a pre-handler to your route map, add it to an array and set that array as the value of the <code class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you call <code class="code-inline">createRouteMap()</code>.</p>
 
     <pre><code class="language-js">const app = createRouteMap({
   preHandlers: [
@@ -26,7 +26,35 @@ docs: true
 
 // 'myPreHandler' will be executed before all routes added to 'app'</code></pre>
 
-  <p>While mofifying the passed <a href="/docs/api/tuft-context">TuftContext</a> object is supported, overriding pre-existing properties is not:</p>
+  <p>If a pre-handler returns a response object, a response will be sent based on the properties in that object, and all successive pre-handlers (and the main response handler itself) will be bypassed. In the following example, <code class="code-inline">preHandler1()</code> and <code class="code-inline">preHandler2()</code> will be executed, but <code class="code-inline">preHandler3()</code> and <code class="code-inline">handler()</code> will not:</p>
+
+  <pre><code class="language-js">function preHandler1() {
+  // custom middleware logic
+}
+
+function preHandler2() {
+  return { status: 400 }
+}
+
+function preHandler3() {
+  // custom middleware logic
+}
+
+function handler() {
+  return { status: 200 }
+}
+
+const app = createRouteMap({
+  preHandlers: [
+    preHandler1,
+    preHandler2,
+    preHandler3
+  ]
+})
+
+app.set('/', handler) // This route will return a 400 status code</code></pre>
+
+  <p>While mofifying the passed <a href="/docs/api/tuft-context">TuftContext</a> object is supported, overriding pre-existing properties is not.</p>
 
     <pre><code class="language-js">function myPreHandler(t) {
   // 'time' is not a pre-existing property, so this is fine
