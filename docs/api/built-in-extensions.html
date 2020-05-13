@@ -24,7 +24,7 @@ const app = createRouteMap({
   ]
 })
 
-app.set('/foo', (t) => {
+app.set('/', (t) => {
   console.log(t.request.searchParams)
 })
 
