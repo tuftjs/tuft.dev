@@ -14,8 +14,27 @@ docs: true
     <h3 class="api-sub-heading">⭐ Pre-handlers</h3>
 
     <div class="api-entry">
-      <h3><code>createCookieParser()</code></h3>
-      <p><strong>Cookie parser</strong> extracts key/value pairs from the cookie header and makes them available as the <code class="code-inline">cookie</code> property in the request object:</p>
+      <h3 id="search-params"><code>createSearchParams()</code></h3>
+      <p>Adds a <code class="code-inline">searchParams</code> property to the request object, set to an instance of <code class="code-inline">URLSearchParams</code>, which contains any key/value pairs present in the query string of the request URL.</p>
+      <pre><code class="language-js">const { createSearchParams, createRouteMap } = require('tuft')
+
+const app = createRouteMap({
+  preHandlers: [
+    createSearchParams()
+  ]
+})
+
+app.set('/foo', (t) => {
+  console.log(t.request.searchParams)
+})
+
+// A request for the path '/?foo=bar' will set 'searchParams' to the following:
+// URLSearchParams { 'a' => '1' }</code></pre>
+    </div>
+
+    <div class="api-entry">
+      <h3 id="cookie-parser"><code>createCookieParser()</code></h3>
+      <p><strong>Cookie parser</strong> extracts key/value pairs from the cookie header and makes them available as the <code class="code-inline">cookie</code> property in the request object.</p>
       <pre><code class="language-js">const { createCookieParser, createRouteMap } = require('tuft')
 
 const app = createRouteMap({
@@ -24,13 +43,13 @@ const app = createRouteMap({
   ]
 })
 
-app.set('/', (t) => {
+app.set('/foo', (t) => {
   console.log(t.request.cookies)
 })</code></pre>
     </div>
 
     <div class="api-entry">
-      <h3><code>createBodyParser([options])</code></h3>
+      <h3 id="body-parser"><code>createBodyParser([options])</code></h3>
       <p>By default, Tuft does not include the request body in the request object, as doing so has a significant performance impact. <strong>Body parser</strong> is therefore provided as an optional pre-handler extension that can be added only to the routes that require it. It adds a <code class="code-inline">body</code> property to the request object, which will be set to the value of the body for a given request. If there is no body, it will be set to <code class="code-inline">null</code>.</p>
       <pre><code class="language-js">const { createBodyParser, createRouteMap } = require('tuft')
 
@@ -70,7 +89,7 @@ app.set('/', (t) => {
     <h3 class="api-sub-heading">⭐ Responders</h3>
 
     <div class="api-entry">
-      <h3><code>createStreamResponder()</code></h3>
+      <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
       <p>Even though the response body is sent by writing to an HTTP/2 stream, Tuft itself only supports sending a single value by default. For situations where this is not ideal, the <strong>stream responder</strong> allows you to send multiple chunks by including your logic in a callback function.</p>
 
       <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the response object and setting it to a callback function, which then accepts a <code class="code-inline">write()</code> function as its first and only argument.</p>
