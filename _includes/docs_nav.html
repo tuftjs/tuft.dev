@@ -2,33 +2,53 @@
   <h4>GETTING STARTED</h4>
   <ul>
     {% for item in site.data.nav.docs.getting_started %}
-      <li>
-        <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
-          {{ item.name }}</a>
-          {% if page.url == item.link %}🚩{% endif %}
-      </li>
+    <li>
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"
+        {% else %}class="docs-nav-link" {% endif %}>
+        {{ item.name }}</a>
+    </li>
     {% endfor %}
   </ul>
   <h4>MAIN CONCEPTS</h4>
   <ul>
     {% for item in site.data.nav.docs.main_concepts %}
     <li>
-      <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"
+        {% else %}class="docs-nav-link" {% endif %}>
         {{ item.name }}</a>
-
-        {% if page.url == item.link %}🚩{% endif %}
     </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
   <h4>API</h4>
   <ul>
     {% for item in site.data.nav.docs.api %}
-      <li>
-        <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
-          {{ item.name }}</a>
-
-          {% if page.url == item.link %}🚩{% endif %}
-      </li>
+    <li>
+      <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"
+        {% else %}class="docs-nav-link" {% endif %}>
+        {{ item.name }}</a>
+    </li>
     {% endfor %}
   </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      {% for item in site.data.nav.docs.getting_started %}
+      <option value="{{ item.link }}" {% if page.url == item.link %}selected{% endif %}>
+        {{ item.name }}</option>
+      {% endfor %}
+    </optgroup>
+    <optgroup label="Main Concepts">
+      {% for item in site.data.nav.docs.main_concepts %}
+      <option value="{{ item.link }}" {% if page.url == item.link %}selected{% endif %}>
+        {{ item.name }}</option>
+      {% endfor %}
+    </optgroup>
+    <optgroup label="API">
+      {% for item in site.data.nav.docs.api %}
+      <option value="{{ item.link }}" {% if page.url == item.link %}selected{% endif %}>
+        {{ item.name }}</option>
+      {% endfor %}
+    </optgroup>
+  </select>
 </section>

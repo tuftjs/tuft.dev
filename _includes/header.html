@@ -10,8 +10,7 @@
   <nav id="nav-bar">
     <ul>
       {% for item in site.data.nav.header %}
-      <li {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="current"
-      {% else %}class="nav-bar-link" {% endif %}>
+      <li {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="current" {% endif %}>
         <a {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="nav-bar-link current"
           {% else %}class="nav-bar-link" {% endif %} href="{{ item.link }}">
           {{ item.name }}
