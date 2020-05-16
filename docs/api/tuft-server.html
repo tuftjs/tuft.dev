@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Tuft
+permalink: /docs/tuft-server/
 docs: true
 ---
-<div id="main-margin-left"></div>
-<main id="main">
+<div class="main-margin left"></div>
+<main id="docs">
   {% include docs_nav.html %}
-  <section id="content">
+  <section id="docs-content">
     <h1>TuftServer</h1>
     <p>An instance of <strong>TuftServer</strong> is returned whenever the <code class="code-inline">.createServer()</code> method of <a href="/docs/api/tuft-route-map">TuftRouteMap</a> is called.</p>
 
-    <h3 class="api-sub-heading">⭐ Methods</h3>
+    <h3 class="docs-sub-heading">Methods</h3>
 
     <div class="api-entry">
       <h3><code>.start()</code></h3>
@@ -34,17 +34,17 @@ docs: true
       <p>If called while the server is running, returns an object containing data about the current server, such as the IP address and port number the server is listening on.</p>
     </div>
 
-    <h3 class="api-sub-heading">⭐ Properties</h3>
+    <h3 class="docs-sub-heading">Properties</h3>
 
     <div class="api-entry">
-      <h3><code>host</code> <code class="code-plain">string</code></h3>
+      <h3><code>host</code> <code class="code-data-type">string</code></h3>
       <p>The IP address or hostname that the server will listen on when it's running.</p>
     </div>
 
     <div class="api-entry">
-      <h3><code>port</code> <code class="code-plain">number</code></h3>
+      <h3><code>port</code> <code class="code-data-type">number</code></h3>
       <p>The port that the server will listen on when it's running.</p>
     </div>
   </section>
 </main>
-<div id="main-margin-right"></div>
+<div class="main-margin right"></div>

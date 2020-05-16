@@ -1,37 +1,42 @@
 ---
 layout: default
-title: Tuft
+permalink: /docs/tuft-route-map/
 docs: true
 ---
-<div id="main-margin-left"></div>
-<main id="main">
+<div class="main-margin left"></div>
+<main id="docs">
   {% include docs_nav.html %}
-  <section id="content">
+  <section id="docs-content">
     <h1>TuftRouteMap</h1>
-    <p>Instances of <strong>TuftRouteMap</strong> are not created directly, but are instead returned by <a href="/docs/api/create-route-map">createRouteMap()</a>.</p>
+    <p>Instances of <strong>TuftRouteMap</strong> are not created directly, but are instead returned by <a
+        href="/docs/api/create-route-map">createRouteMap()</a>.</p>
 
-    <h3 class="api-sub-heading">⭐ Methods</h3>
+    <h3 class="docs-sub-heading">Methods</h3>
 
     <div class="api-entry">
       <h3><code>.set(routeName, response)</code></h3>
 
-      <p>Accepts a string representing the route path as the first argument, with a specific request method or methods optionally prepended, and a response object (or function that returns a response object) as the second argument.</p>
+      <p>Accepts a string representing the route path as the first argument, with a specific request method or methods
+        optionally prepended, and a response object (or function that returns a response object) as the second argument.
+      </p>
 
-      <p>The following route will respond to all supported request methods when requesting path <code class="code-inline">'/foo'</code>:</p>
+      <p>The following route will respond to all supported request methods when requesting path <code
+          class="code-inline">'/foo'</code>:</p>
 
       <pre><code class="language-js">routes.set('/foo', {
   status: 200
 })</code></pre>
 
-    <p>To add a route that responds to a specific request method, prepend the method name to the path, followed by a space:</p>
+      <p>To add a route that responds to a specific request method, prepend the method name to the path, followed by a
+        space:</p>
 
-    <pre><code class="language-js">routes.set('GET /foo', {
+      <pre><code class="language-js">routes.set('GET /foo', {
   status: 200
 })</code></pre>
 
-    <p>To add multiple methods, separate them with a vertical slash <code class="code-inline">'|'</code>:</p>
+      <p>To add multiple methods, separate them with a vertical slash <code class="code-inline">'|'</code>:</p>
 
-    <pre><code class="language-js">// Add the routes 'GET /foo' and 'POST /foo'
+      <pre><code class="language-js">// Add the routes 'GET /foo' and 'POST /foo'
 routes.set('GET|POST /foo', {
   status: 200
 })</code></pre>
@@ -40,7 +45,8 @@ routes.set('GET|POST /foo', {
     <div class="api-entry">
       <h3><code>.merge(routeMap)</code></h3>
 
-      <p>Accepts another instance of <strong>TuftRouteMap</strong>. All routes from the passed route map will be merged with the current one.</p>
+      <p>Accepts another instance of <strong>TuftRouteMap</strong>. All routes from the passed route map will be merged
+        with the current one.</p>
 
       <pre><code class="language-js">const routes1 = createRouteMap()
 const routes2 = createRouteMap()
@@ -49,48 +55,64 @@ routes1.set('GET /foo', {})
 
 routes2.merge(routes1) // routes2 now also includes the route 'GET /foo'</code></pre>
 
-      <p>There are some important things to note about how the values set in route map <code class="code-inline">options</code> are handled when merging:</p>
+      <p>There are some important things to note about how the values set in route map <code
+          class="code-inline">options</code> are handled when merging:</p>
 
-      <ul id="api-list">
-        <li>If the current route map has the <code class="code-inline">basePath</code> option set, then the paths for all merged routes will also have that base path prepended to them.</li>
-        <li>Any <code class="code-inline">preHandlers</code> and/or <code class="code-inline">responders</code> present for the current route map will also be added to all the merged routes.</li>
-        <li>If a merged route already has the <code class="code-inline">trailingSlash</code> option set then it will be preserved, otherwise it will inherit whatever has been set in the current route map.</li>
+      <ul class="docs-list">
+        <li>If the current route map has the <code class="code-inline">basePath</code> option set, then the paths for
+          all merged routes will also have that base path prepended to them.</li>
+        <li>Any <code class="code-inline">preHandlers</code> and/or <code class="code-inline">responders</code> present
+          for the current route map will also be added to all the merged routes.</li>
+        <li>If a merged route already has the <code class="code-inline">trailingSlash</code> option set then it will be
+          preserved, otherwise it will inherit whatever has been set in the current route map.</li>
       </ul>
     </div>
 
     <div class="api-entry">
       <h3><code>.redirect(routeName, url)</code></h3>
-      <p>Redirects any requests for <code class="code-inline">routeName</code> to <code class="code-inline">url</code>, which can be a relative path or an absolute URI.</p>
+      <p>Redirects any requests for <code class="code-inline">routeName</code> to <code class="code-inline">url</code>,
+        which can be a relative path or an absolute URI.</p>
       <pre><code class="language-js">// Redirect all GET requests for '/foo' to '/bar'
 routes.redirect('GET /foo', '/bar')
 
 // Redirect all GET requests for '/example' to 'https://www.example.com'
 routes.redirect('GET /example', 'https://www.example.com')</code></pre>
-    <p>Clients will be redirected with a <code class="http-status">302 Found</code> status code.</p>
+      <p>Clients will be redirected with a <code class="code-inline http-status">302 Found</code> status code.</p>
     </div>
 
     <div class="api-entry">
       <h3><code>.onError(callback)</code></h3>
-      <p>Adds a listener for errors that occur in the request/response cycle, executing <code class="code-inline">callback</code> whenever they are emitted. Tuft catches synchronous errors that occur in the request/response cycle, or any errors that are emitted by the Node HTTP/2 stream object. It then responds to the client with a <code class="http-status">500 Internal Server Error</code> status code, provided the connection is still open and the headers have not already been sent. The emitted <code class="code-inline">Error</code> object is then passed to <code class="code-inline">callback</code> as its first and only argument.</p>
+      <p>Adds a listener for errors that occur in the request/response cycle, executing <code
+          class="code-inline">callback</code> whenever they are emitted. Tuft catches synchronous errors that occur in
+        the request/response cycle, or any errors that are emitted by the Node HTTP/2 stream object. It then responds to
+        the client with a <code class="code-inline http-status">500 Internal Server Error</code> status code, provided
+        the
+        connection is still open and the headers have not already been sent. The emitted <code
+          class="code-inline">Error</code> object is then passed to <code class="code-inline">callback</code> as its
+        first and only argument.</p>
       <pre><code class="language-js">routes.onError(err => {
   console.error(err) // Pipe the error to stderr
 })</code></pre>
-      <blockquote class="blockquote-note">
-        <p><strong>Note:</strong></p>
-        <p>At present, Tuft only supports a single error listener. Multiple calls to <code class="code-inline">.onError()</code> will override the previously added callback.</p>
+      <blockquote>
+        <h4>Note:</h4>
+        <p>At present, Tuft only supports a single error listener. Multiple calls to <code
+            class="code-inline">.onError()</code> will override the previously added callback.</p>
       </blockquote>
     </div>
 
     <div class="api-entry">
       <h3><code>.createServer([options])</code></h3>
-      <p>Returns an instance of <a href="/docs/api/tuft-server">TuftServer</a>, which is an <strong>HTTP</strong> server instance that listens for and responds to requests based on the routes that were added to the route map. Accepts an <code class="code-inline">options</code> argument, which is an object that may contain any of the following properties:</p>
+      <p>Returns an instance of <a href="/docs/api/tuft-server">TuftServer</a>, which is an <strong>HTTP</strong> server
+        instance that listens for and responds to requests based on the routes that were added to the route map. Accepts
+        an <code class="code-inline">options</code> argument, which is an object that may contain any of the following
+        properties:</p>
       <div class="api-entry">
-        <h3><code>host</code><code class="code-plain">string</code></h3>
+        <h3><code>host</code><code class="code-data-type">string</code></h3>
         <p>The host address the server should listen on.</p>
         <p>Defaults to <code class="code-inline">'localhost'</code>.</p>
       </div>
       <div class="api-entry">
-        <h3><code>port</code><code class="code-plain">number</code></h3>
+        <h3><code>port</code><code class="code-data-type">number</code></h3>
         <p>The port the server should listen on.</p>
         <p>Defaults to <code class="code-inline">0</code> (random port).</p>
       </div>
@@ -98,20 +120,25 @@ routes.redirect('GET /example', 'https://www.example.com')</code></pre>
 
     <div class="api-entry">
       <h3><code>.createSecureServer([options])</code></h3>
-      <p>Same as <code class="code-inline">.createServer()</code>, except that it returns an instance of <a href="/docs/api/tuft-secure-server">TuftSecureServer</a>, which is an <strong>HTTPS</strong> server instance. In addition to the options accepted by <code class="code-inline">.createServer()</code>, it also accepts the following properties:</p>
+      <p>Same as <code class="code-inline">.createServer()</code>, except that it returns an instance of <a
+          href="/docs/api/tuft-secure-server">TuftSecureServer</a>, which is an <strong>HTTPS</strong> server instance.
+        In addition to the options accepted by <code class="code-inline">.createServer()</code>, it also accepts the
+        following properties:</p>
       <div class="api-entry">
-        <h3><code>key</code><code class="code-plain">string</code></h3>
+        <h3><code>key</code><code class="code-data-type">string</code></h3>
         <p>A private key in <code class="code-inline">.pem</code> format.</p>
       </div>
       <div class="api-entry">
-        <h3><code>cert</code><code class="code-plain">string</code></h3>
+        <h3><code>cert</code><code class="code-data-type">string</code></h3>
         <p>A certificate in <code class="code-inline">.pem</code> format.</p>
       </div>
-      <blockquote class="blockquote-note">
-        <p><strong>Note:</strong></p>
-        <p>Although <code class="code-inline">key</code> and <code class="code-inline">cert</code> are listed as options for <code class="code-inline">.createSecureServer()</code>, they are in fact required for a secure server to work. Your server will not respond to requests if you start a secure server without them.</p>
+      <blockquote>
+        <h4>Note:</h4>
+        <p>Although <code class="code-inline">key</code> and <code class="code-inline">cert</code> are listed as options
+          for <code class="code-inline">.createSecureServer()</code>, they are in fact required for a secure server to
+          work. Your server will not be able to respond to requests if you start a secure server without them.</p>
       </blockquote>
     </div>
   </section>
 </main>
-<div id="main-margin-right"></div>
+<div class="main-margin right"></div>

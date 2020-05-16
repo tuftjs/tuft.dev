@@ -1,20 +1,26 @@
+<div class="header-margin left"></div>
 <header>
-  <div class="logo">
-    <h2 id="logo-text">Tuft</h2>
-    <div id="version-container">
-      <a id="nav-link-version" class="nav-link" href="https://github.com/tuftjs/tuft/releases" target="_blank">v1.0.0-alpha.7</a>
+  <div id="logo">
+    <h2>{{ site.data.main.title }}</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        {{ site.data.main.tuft_version }}</a>
     </div>
   </div>
   <nav id="nav-bar">
     <ul>
-      {% for item in site.data.nav %}
-        <li>
-          <a href="{{ item.link }}" {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="nav-link current"{% else %}class="nav-link"{% endif %}>
-            {{ item.name }}
-          </a>
-        </li>
+      {% for item in site.data.nav.header %}
+      <li {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="current"
+      {% else %}class="nav-bar-link" {% endif %}>
+        <a {% if (page.url == item.link) or (page.docs == true and item.link == "/docs/") %}class="nav-bar-link current"
+          {% else %}class="nav-bar-link" {% endif %} href="{{ item.link }}">
+          {{ item.name }}
+        </a>
+      </li>
       {% endfor %}
-      <li><a id="nav-link-github" class="nav-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;<img src="/assets/images/open_in_new-black-18dp.svg" alt="Open GitHub link in new window"></a></li>
+      <li><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;<img
+            id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></a></li>
     </ul>
   </nav>
 </header>
+<div class="header-margin right"></div>

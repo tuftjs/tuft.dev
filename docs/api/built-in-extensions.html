@@ -1,21 +1,24 @@
 ---
 layout: default
-title: Tuft
+permalink: /docs/built-in-extensions/
 docs: true
 ---
-<div id="main-margin-left"></div>
-<main id="main">
+<div class="main-margin left"></div>
+<main id="docs">
   {% include docs_nav.html %}
-  <section id="content">
+  <section id="docs-content">
     <h1>Built-in extensions</h1>
 
-    <p>Tuft comes with a few built-in extensions as named exports. When you import a built-in extension, you are importing a factory function that must be called to return the extension itself.</p>
+    <p>Tuft comes with a few built-in extensions as named exports. When you import a built-in extension, you are
+      importing a factory function that must be called to return the extension itself.</p>
 
-    <h3 class="api-sub-heading">⭐ Pre-handlers</h3>
+    <h3 class="docs-sub-heading">Pre-handlers</h3>
 
     <div class="api-entry">
       <h3 id="search-params"><code>createSearchParams()</code></h3>
-      <p>Adds a <code class="code-inline">searchParams</code> property to the request object, set to an instance of <code class="code-inline">URLSearchParams</code>, which contains any key/value pairs present in the query string of the request URL.</p>
+      <p>Adds a <code class="code-inline">searchParams</code> property to the request object, set to an instance of
+        <code class="code-inline">URLSearchParams</code>, which contains any key/value pairs present in the query string
+        of the request URL.</p>
       <pre><code class="language-js">const { createSearchParams, createRouteMap } = require('tuft')
 
 const app = createRouteMap({
@@ -34,7 +37,8 @@ app.set('/', (t) => {
 
     <div class="api-entry">
       <h3 id="cookie-parser"><code>createCookieParser()</code></h3>
-      <p><strong>Cookie parser</strong> extracts key/value pairs from the cookie header and makes them available as the <code class="code-inline">cookie</code> property in the request object.</p>
+      <p><strong>Cookie parser</strong> extracts key/value pairs from the cookie header and makes them available as the
+        <code class="code-inline">cookie</code> property in the request object.</p>
       <pre><code class="language-js">const { createCookieParser, createRouteMap } = require('tuft')
 
 const app = createRouteMap({
@@ -50,7 +54,11 @@ app.set('/foo', (t) => {
 
     <div class="api-entry">
       <h3 id="body-parser"><code>createBodyParser([options])</code></h3>
-      <p>By default, Tuft does not include the request body in the request object, as doing so has a significant performance impact. <strong>Body parser</strong> is therefore provided as an optional pre-handler extension that can be added only to the routes that require it. It adds a <code class="code-inline">body</code> property to the request object, which will be set to the value of the body for a given request. If there is no body, it will be set to <code class="code-inline">null</code>.</p>
+      <p>By default, Tuft does not include the request body in the request object, as doing so has a significant
+        performance impact. <strong>Body parser</strong> is therefore provided as an optional pre-handler extension that
+        can be added only to the routes that require it. It adds a <code class="code-inline">body</code> property to the
+        request object, which will be set to the value of the body for a given request. If there is no body, it will be
+        set to <code class="code-inline">null</code>.</p>
       <pre><code class="language-js">const { createBodyParser, createRouteMap } = require('tuft')
 
 const app = createRouteMap({
@@ -62,39 +70,56 @@ const app = createRouteMap({
 app.set('/', (t) => {
   console.log(t.request.body)
 })</code></pre>
-      <p>By default, the request body is added to the request object as a <code class="code-inline">buffer</code>. If an <code class="code-inline">options</code> object is provided with a valid property that matches the incoming <code class="code-inline">'content-type'</code> header, it will convert the <code class="code-inline">buffer</code> into the appropriate format.</p>
+      <p>By default, the request body is added to the request object as a <code class="code-inline">buffer</code>. If an
+        <code class="code-inline">options</code> object is provided with a valid property that matches the incoming
+        <code class="code-inline">'content-type'</code> header, it will convert the <code
+          class="code-inline">buffer</code> into the appropriate format.</p>
 
-      <p>Each of the optional properties below can be set to either a <code class="code-inline">boolean</code> or a <code class="code-inline">number</code>.</p>
-      <ul id="api-list">
+      <p>Each of the optional properties below can be set to either a <code class="code-inline">boolean</code> or a
+        <code class="code-inline">number</code>.</p>
+      <ul class="docs-list">
         <li>If set to <code class="code-inline">false</code>, the given type will not be converted.</li>
-        <li>If set to <code class="code-inline">true</code>, the given type will be converted when the request body size is less than or equal to the default limit of <code class="code-inline">1048576</code> bytes (1 MiB).</li>
-        <li>If set to a <code class="code-inline">number</code>, the given type will be converted when the request body size is less than or equal to that number (in bytes).</li>
+        <li>If set to <code class="code-inline">true</code>, the given type will be converted when the request body size
+          is less than or equal to the default limit of <code class="code-inline">1048576</code> bytes (1 MiB).</li>
+        <li>If set to a <code class="code-inline">number</code>, the given type will be converted when the request body
+          size is less than or equal to that number (in bytes).</li>
       </ul>
       <div class="api-entry">
-        <h3><code>text</code> <code class="code-plain">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code class="code-inline">text/*</code> will be converted to a <code class="code-inline">string</code>, provided it is less than or equal to the maximum body size.</p>
+        <h3><code>text</code> <code class="code-data-type">boolean | number</code></h3>
+        <p>If this option is set, any request body of type <code class="code-inline">text/*</code> will be converted to
+          a <code class="code-inline">string</code>, provided it is less than or equal to the maximum body size.</p>
       </div>
 
       <div class="api-entry">
-        <h3><code>json</code> <code class="code-plain">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code class="code-inline">application/json</code> will be converted to an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>, provided it is less than or equal to the maximum body size.</p>
+        <h3><code>json</code> <code class="code-data-type">boolean | number</code></h3>
+        <p>If this option is set, any request body of type <code class="code-inline">application/json</code> will be
+          converted to an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>,
+          provided it is less than or equal to the maximum body size.</p>
       </div>
 
       <div class="api-entry">
-        <h3><code>urlEncoded</code> <code class="code-plain">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code class="code-inline">application/x-www-form-urlencoded</code> will be converted to an <code class="code-inline">object</code>, provided it is less than or equal to the maximum body size.</p>
+        <h3><code>urlEncoded</code> <code class="code-data-type">boolean | number</code></h3>
+        <p>If this option is set, any request body of type <code
+            class="code-inline">application/x-www-form-urlencoded</code> will be converted to an <code
+            class="code-inline">object</code>, provided it is less than or equal to the maximum body size.</p>
       </div>
     </div>
 
-    <h3 class="api-sub-heading">⭐ Responders</h3>
+    <h3 class="docs-sub-heading">Responders</h3>
 
     <div class="api-entry">
       <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
-      <p>Even though the response body is sent by writing to an HTTP/2 stream, Tuft itself only supports sending a single value by default. For situations where this is not ideal, the <strong>stream responder</strong> allows you to send multiple chunks by including your logic in a callback function.</p>
+      <p>Even though the response body is sent by writing to an HTTP/2 stream, Tuft itself only supports sending a
+        single value by default. For situations where this is not ideal, the <strong>stream responder</strong> allows
+        you to send multiple chunks by including your logic in a callback function.</p>
 
-      <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the response object and setting it to a callback function, which then accepts a <code class="code-inline">write()</code> function as its first and only argument.</p>
+      <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the
+        response object and setting it to a callback function, which then accepts a <code
+          class="code-inline">write()</code> function as its first and only argument.</p>
 
-      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. The response will end automatically when the callback function returns. It also optionally accepts the encoding type (a <code class="code-inline">string</code>) as the second argument.</p>
+      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. The
+        response will end automatically when the callback function returns. It also optionally accepts the encoding type
+        (a <code class="code-inline">string</code>) as the second argument.</p>
       <pre><code class="language-js">const { createStreamResponder, createRouteMap } = require('tuft')
 
 const app = createRouteMap({
@@ -111,7 +136,7 @@ app.set('/', () => {
     }
   }
 })</code></pre>
-      </div>
+    </div>
   </section>
 </main>
-<div id="main-margin-right"></div>
+<div class="main-margin right"></div>

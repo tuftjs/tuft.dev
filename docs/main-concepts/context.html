@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: /docs/context/
+docs: true
+---
+<div class="main-margin left"></div>
+<main id="docs">
+  {% include docs_nav.html %}
+  <section id="docs-content">
+    <h1>Context</h1>
+    <p>The <code class="code-inline">context</code> is an object that gets passed as the first and only argument to any
+      response handlers you define. In the below example it has been defined simply as <code
+        class="code-inline">t</code>:</p>
+    <pre><code class="language-js">const response = (t) => {
+  if (t.request.method === 'GET') {
+    return { text: 'GET request received' }
+  }
+
+  else {
+    return { text: 'Expected a GET request' }
+  }
+}</code></pre>
+    <p>Contained within are methods and properties related to the current HTTP transaction. For more information, see
+      the API section on <a href="/docs/api/tuft-context">TuftContext</a>.</p>
+  </section>
+</main>
+<div class="main-margin right"></div>

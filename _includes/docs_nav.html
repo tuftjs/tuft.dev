@@ -1,7 +1,7 @@
-<section id="menu">
+<section id="docs-nav">
   <h4>GETTING STARTED</h4>
   <ul>
-    {% for item in site.data.docs_nav.getting_started %}
+    {% for item in site.data.nav.docs.getting_started %}
       <li>
         <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
           {{ item.name }}</a>
@@ -11,7 +11,7 @@
   </ul>
   <h4>MAIN CONCEPTS</h4>
   <ul>
-    {% for item in site.data.docs_nav.main_concepts %}
+    {% for item in site.data.nav.docs.main_concepts %}
     <li>
       <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
         {{ item.name }}</a>
@@ -22,7 +22,7 @@
   </ul>
   <h4>API</h4>
   <ul>
-    {% for item in site.data.docs_nav.api %}
+    {% for item in site.data.nav.docs.api %}
       <li>
         <a href="{{ item.link }}" {% if page.url == item.link %}class="docs-nav-link current"{% else %}class="docs-nav-link"{% endif %}>
           {{ item.name }}</a>
