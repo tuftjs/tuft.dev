@@ -42,6 +42,33 @@ routes.set('GET|POST /foo', {
 })</code></pre>
     </div>
 
+    <p>Tuft also supports wildcard globs and named parameters in pathnames. To add a wildcard for a single path segment, use an asterisk enclosed between curly braces <code class="code-inline">{*}</code>, or use two asterisks to represent a path segment and any succesive segments <code class="code-inline">{**}</code>:</p>
+
+    <pre><code class="language-js">// Match '/foo' and '/bar', but not '/foo/bar'
+routes.set('GET /{*}', {
+  status: 200
+})
+
+// Match '/foo/bar' and '/foo/baz', but not '/bar/bar' or '/bar/baz'
+routes.set('GET /foo/{*}', {
+  status: 200
+})
+
+// Match '/foo/bar' and '/foo/bar/baz', but not '/bar/bar' or '/bar/bar/baz'
+routes.set('GET /foo/{**}', {
+  status: 200
+})</code></pre>
+
+    <p>To add a route with a named parameter, replace the single asterisk from the example above with the parameter name. The parameter values will be made available in the <code class="code-inline">params</code> property of the request object.</p>
+
+    <pre><code class="language-js">// Match '/users/1234'
+routes.set('GET /users/{id}', ({ request }) => {
+  console.log(request.params) // { id: '1234' }
+  return {
+    status: 200
+  }
+})</code></pre>
+
     <div class="api-entry">
       <h3><code>.merge(routeMap)</code></h3>
 
