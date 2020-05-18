@@ -54,7 +54,7 @@ app.set('GET /', () => {
           class="code-inline">'application/octet-stream'</code>.</p>
     </div>
     <div class="api-entry">
-      <h3><code>text</code><code class="code-data-type">string</code></h3>
+      <h3><code>text</code><code class="code-data-type">string | number | boolean</code></h3>
       <p>Sets the response body to the provided value and adds an outgoing <code
           class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain'</code>.</p>
     </div>
@@ -64,8 +64,8 @@ app.set('GET /', () => {
           class="code-inline">'content-type'</code> header of <code class="code-inline">'text/html'</code>.</p>
     </div>
     <div class="api-entry">
-      <h3><code>json</code><code class="code-data-type">object</code></h3>
-      <p>Serializes the provided value to a JSON string, then sets the response body to that string. Adds an outgoing
+      <h3><code>json</code><code class="code-data-type">string | object</code></h3>
+      <p>Serializes the provided value to a JSON string (if it is already a string, then it is not modified), then sets the response body to that string. Adds an outgoing
         <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/json'</code>.
       </p>
     </div>
