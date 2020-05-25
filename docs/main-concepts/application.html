@@ -16,7 +16,7 @@ docs: true
     <p>In Tuft, the functionalty of this single "application" object is split into the following two objects:</p>
     <br>
     <h3>1. Route Map</h3>
-    <p>This is an instance of <a href="/docs/api/tuft-route-map">TuftRouteMap</a> that is returned by <code
+    <p>This is an instance of <a href="/docs/tuft-route-map">TuftRouteMap</a> that is returned by <code
         class="code-inline">createRouteMap()</code>, and inherits from the JavaScript <a
         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map"
         target="_blank">Map</a> object. It stores routes and their associated response data as key/value pairs, where
@@ -43,9 +43,9 @@ console.log(myRoute)
     <h3>2. Server</h3>
     <p>Once all the routes have been added to the route map, a server object can be created by calling the <code
         class="code-inline">.createServer()</code> or <code class="code-inline">.createSecureServer()</code> methods of
-      <a href="/docs/api/tuft-route-map">TuftRouteMap</a>. When either of these methods is called, the data from the
+      <a href="/docs/tuft-route-map">TuftRouteMap</a>. When either of these methods is called, the data from the
       route map is compiled into a set of optimized functions and made available to the returned instance of <a
-        href="/docs/api/tuft-server">TuftServer</a> or <a href="/docs/api/tuft-secure-server">TuftSecureServer</a>. The
+        href="/docs/tuft-server">TuftServer</a> or <a href="/docs/tuft-secure-server">TuftSecureServer</a>. The
       server can then be started and stopped using the <code class="code-inline">.start()</code> and <code
         class="code-inline">.stop()</code> methods.</p>
     <pre><code class="language-js">const server = app.createServer()

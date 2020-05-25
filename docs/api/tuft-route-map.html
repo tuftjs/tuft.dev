@@ -9,7 +9,7 @@ docs: true
   <section id="docs-content">
     <h1>TuftRouteMap</h1>
     <p>Instances of <strong>TuftRouteMap</strong> are not created directly, but are instead returned by <a
-        href="/docs/api/create-route-map">createRouteMap()</a>.</p>
+        href="/docs/create-route-map">createRouteMap()</a>.</p>
 
     <h3 class="docs-sub-heading">Methods</h3>
 
@@ -148,7 +148,7 @@ await routes.static('/', 'assets');
 
     <div class="api-entry">
       <h3><code>.createServer([options])</code></h3>
-      <p>Returns an instance of <a href="/docs/api/tuft-server">TuftServer</a>, which is an <strong>HTTP</strong> server
+      <p>Returns an instance of <a href="/docs/tuft-server">TuftServer</a>, which is an <strong>HTTP</strong> server
         instance that listens for and responds to requests based on the routes that were added to the route map. Accepts
         an <code class="code-inline">options</code> argument, which is an object that may contain any of the following
         properties:</p>
@@ -167,7 +167,7 @@ await routes.static('/', 'assets');
     <div class="api-entry">
       <h3><code>.createSecureServer([options])</code></h3>
       <p>Same as <code class="code-inline">.createServer()</code>, except that it returns an instance of <a
-          href="/docs/api/tuft-secure-server">TuftSecureServer</a>, which is an <strong>HTTPS</strong> server instance.
+          href="/docs/tuft-secure-server">TuftSecureServer</a>, which is an <strong>HTTPS</strong> server instance.
         In addition to the options accepted by <code class="code-inline">.createServer()</code>, it also accepts the
         following properties:</p>
       <div class="api-entry">

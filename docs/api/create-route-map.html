@@ -10,7 +10,7 @@ docs: true
     <h1>createRouteMap([options])</h1>
     <p>The Tuft library does not have a default export. Instead, it exports a named function called
       <code class="code-inline">createRouteMap()</code>, which is the intended method for creating a Tuft "application". It returns an
-      instance of <a href="/docs/api/tuft-route-map">TuftRouteMap</a>, to which all route data and associated response
+      instance of <a href="/docs/tuft-route-map">TuftRouteMap</a>, to which all route data and associated response
       handlers are added. An <code class="code-inline">options</code> object can be passed as the only argument to set
       defaults for all routes that are subsequently added.</p>
     <pre><code class="language-js">const { createRouteMap } = require('tuft')
@@ -61,14 +61,14 @@ const app = createRouteMap(options)</code></pre>
     <div class="api-entry">
       <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
       <p>An array of Tuft pre-handlers that are executed serially before the response handler for each route that gets
-        added. For more information, see the section on <a href="/docs/pre-handlers">pre-handlers</a>.</p>
+        added. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
       <p>Defaults to <code class="code-inline">[]</code>.</p>
     </div>
     <div class="api-entry">
       <h3><code>responders</code><code class="code-data-type">TuftResponder[]</code></h3>
       <p>An array of Tuft responders that are executed serially after the response handler returns. A Tuft responder is
         a function which receives a response object, and then determines how to respond to the client based on the
-        properties included in that object. For more information, see the section on <a href="/docs/responders">Tuft
+        properties included in that object. For more information, see the section on <a href="/docs/extensions#responders">Tuft
           responders</a>.</p>
       <p>Defaults to <code class="code-inline">[]</code>.</p>
     </div>

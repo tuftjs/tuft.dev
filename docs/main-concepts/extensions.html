@@ -9,11 +9,11 @@ docs: true
   <section id="docs-content">
     <h1>Extensions</h1>
     <p>Tuft extensions are split between two types: <strong>pre-handlers</strong> and <strong>responders</strong>.</p>
-    <h3 class="docs-sub-heading">Pre-handlers</h3>
+    <h3 class="docs-sub-heading" id="pre-handlers">Pre-handlers</h3>
     <p>A pre-handler is a function akin to a middleware function in frameworks such as <a href="https://expressjs.com"
         target="_blank">Express</a> or <a href="https://koajs.com" target="_blank">Koa</a>. A route can have an array of
       zero or more pre-handler functions which are executed serially, in insertion order, before the response handler is
-      called. A <a href="/docs/api/tuft-context">TuftContext</a> object is passed as the first and only argument to each
+      called. A <a href="/docs/tuft-context">TuftContext</a> object is passed as the first and only argument to each
       pre-handler. This enables you to share logic between multiple routes by writing your own pre-handler functions, or
       you can import pre-handlers from external libraries that were written by yourself or other developers.</p>
 
@@ -65,7 +65,7 @@ const app = createRouteMap({
 
 app.set('/', handler) // This route will return a 400 status code</code></pre>
 
-    <p>While mofifying the passed <a href="/docs/api/tuft-context">TuftContext</a> object is supported, overriding
+    <p>While mofifying the passed <a href="/docs/tuft-context">TuftContext</a> object is supported, overriding
       pre-existing properties is not.</p>
 
     <pre><code class="language-js">function myPreHandler(t) {
@@ -77,13 +77,13 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
 }</code></pre>
     <p>Tuft comes packaged with the following built-in pre-handlers that you can import:</p>
     <ul class="docs-list">
-      <li><a href="/docs/api/built-in-extensions.html#search-params">Search params</a></li>
-      <li><a href="/docs/api/built-in-extensions.html#cookie-parser">Cookie parser</a></li>
-      <li><a href="/docs/api/built-in-extensions.html#body-parser">Body parser</a></li>
+      <li><a href="/docs/built-in-extensions#search-params">Search params</a></li>
+      <li><a href="/docs/built-in-extensions#cookie-parser">Cookie parser</a></li>
+      <li><a href="/docs/built-in-extensions#body-parser">Body parser</a></li>
     </ul>
 
-    <h3 class="docs-sub-heading">Responders</h3>
-    <p>A responder is a function that accepts a <a href="/docs/api/response-object">response object</a> and then
+    <h3 class="docs-sub-heading" id="responders">Responders</h3>
+    <p>A responder is a function that accepts a <a href="/docs/response-object">response object</a> and then
       optionally responds to the client based on its included data. It does this by utilizing the passed Node <a
         href="https://nodejs.org/dist/latest/docs/api/http2.html#http2_class_http2stream" target="_blank">HTTP/2
         stream</a> object.</p>
@@ -113,7 +113,7 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
 // 'myResponder' will be executed before Tuft's built-in responders</code></pre>
     <p>Tuft comes packaged with one built-in responder that you can import:</p>
     <ul class="docs-list">
-      <li><a href="/docs/api/built-in-extensions.html#stream-responder">Stream responder</a></li>
+      <li><a href="/docs/built-in-extensions#stream-responder">Stream responder</a></li>
     </ul>
     <h4>How responders work</h4>
     <p>A responder receives three parameters:</p>
