@@ -108,6 +108,25 @@ routes.redirect('GET /example', 'https://www.example.com')</code></pre>
     </div>
 
     <div class="api-entry">
+      <h3><code>.static(routeName, path)</code> <code class="code-data-type">async</code></h3>
+      <p>Serves static files from the provided route. Unlike other route map methods, <code class="code-inline">routeName</code> should not include the request method in the string. Static files are automatically served to <code class="code-inline">GET</code> and <code class="code-inline">HEAD</code> requests only. Also unlike other route map methods, <code class="code-inline">.static()</code> returns a promise and so should be called with the <code class="code-inline">await</code> keyword.</p>
+      <p><code class="code-inline">path</code> can be either a file path or directory path. If a file path, the file will be available at the provided route path:</p>
+      <pre><code class="language-js">await routes.static('/images', 'assets/profile.png');
+// profile.png will be available at '/images/profile.png'</code></pre>
+      <p>If a directory path, all files within that directory (including subdirectories) will be available at the provided route path:</p>
+      <pre><code class="language-js">// Assuming the 'assets' directory includes the files:
+// * profile.png
+// * styles.css
+// * favicon.ico
+
+await routes.static('/', 'assets');
+// The above files will be available at:
+// * '/profile.png'
+// * '/styles.css'
+// * '/favicon.ico'</code></pre>
+      </div>
+
+    <div class="api-entry">
       <h3><code>.onError(callback)</code></h3>
       <p>Adds a listener for errors that occur in the request/response cycle, executing <code
           class="code-inline">callback</code> whenever they are emitted. Tuft catches synchronous errors that occur in
