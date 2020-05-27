@@ -60,6 +60,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px 0;
 }
 
 div.header-margin {
@@ -80,16 +81,17 @@ div#logo {
 }
 
 div#logo > h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #333;
   margin: 10px;
+  align-self: center;
 }
 
 div#latest-release-link-container {
   line-height: initial;
   align-self: center;
   margin-top: 4px;
-  margin-left: 10px;
+  margin-left: 20px;
   display: flex;
   justify-content: center;
 }
