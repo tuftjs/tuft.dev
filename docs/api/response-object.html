@@ -10,7 +10,7 @@ docs: true
     <h1>Response object</h1>
     <p>The response object is an ordinary JavaScript object with no required properties. When you add a route, you
       either define a response object, or you define a function that <em>returns</em> a response object (a response
-      <em>handler</em>). Tuft uses the properties and their values of said object to determine how to respond to a
+      <em>handler</em>). Tuft uses the properties of said object to determine how to respond to a
       client request.</p>
     <pre><code class="language-js">const response = {
   status: 200,
@@ -56,23 +56,23 @@ app.set('GET /', () => {
     <div class="api-entry">
       <h3><code>text</code><code class="code-data-type">string | number | boolean</code></h3>
       <p>Sets the response body to the provided value and adds an outgoing <code
-          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain'</code>.</p>
+          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain; charset=UTF-8'</code>.</p>
     </div>
     <div class="api-entry">
       <h3><code>html</code><code class="code-data-type">string</code></h3>
       <p>Sets the response body to the provided value and adds an outgoing <code
-          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/html'</code>.</p>
+          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/html; charset=UTF-8'</code>.</p>
     </div>
     <div class="api-entry">
       <h3><code>json</code><code class="code-data-type">string | object</code></h3>
       <p>Serializes the provided value to a JSON string (if it is already a string, then it is not modified), then sets the response body to that string. Adds an outgoing
-        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/json'</code>.
+        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/json; charset=UTF-8'</code>.
       </p>
     </div>
     <div class="api-entry">
       <h3><code>file</code><code class="code-data-type">string</code></h3>
       <p>Responds to the client with a file, where <code class="code-inline">file</code> is a pathname. Adds an outgoing
-        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain'</code>.</p>
+        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain; charset=UTF-8'</code>.</p>
     </div>
     <p>By default, any properties not listed above will be ignored. The <code class="code-inline">status</code> property
       is the only one that can be used in conjunction with other properties (with the exception of <code

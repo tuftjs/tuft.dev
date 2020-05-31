@@ -19,15 +19,13 @@ docs: true
       <p>Adds a <code class="code-inline">searchParams</code> property to the request object, set to an instance of
         <code class="code-inline">URLSearchParams</code>, which contains any key/value pairs present in the query string
         of the request URL.</p>
-      <pre><code class="language-js">const { createSearchParams, createRouteMap } = require('tuft')
+      <pre><code class="language-js">const { createSearchParams } = require('tuft')
 
-const app = createRouteMap({
-  preHandlers: [
-    createSearchParams()
-  ]
+const app = tuft({
+  preHandlers: [createSearchParams()]
 })
 
-app.set('/', (t) => {
+app.set('/', t => {
   console.log(t.request.searchParams)
 })
 
@@ -37,17 +35,15 @@ app.set('/', (t) => {
 
     <div class="api-entry">
       <h3 id="cookie-parser"><code>createCookieParser()</code></h3>
-      <p><strong>Cookie parser</strong> extracts key/value pairs from the cookie header and makes them available as the
+      <p>Extracts key/value pairs from the cookie header and makes them available as the
         <code class="code-inline">cookie</code> property in the request object.</p>
-      <pre><code class="language-js">const { createCookieParser, createRouteMap } = require('tuft')
+      <pre><code class="language-js">const { createCookieParser } = require('tuft')
 
-const app = createRouteMap({
-  preHandlers: [
-    createCookieParser()
-  ]
+const app = tuft({
+  preHandlers: [createCookieParser()]
 })
 
-app.set('/foo', (t) => {
+app.set('/foo', t => {
   console.log(t.request.cookies)
 })</code></pre>
     </div>
@@ -59,15 +55,13 @@ app.set('/foo', (t) => {
         can be added only to the routes that require it. It adds a <code class="code-inline">body</code> property to the
         request object, which will be set to the value of the body for a given request. If there is no body, it will be
         set to <code class="code-inline">null</code>.</p>
-      <pre><code class="language-js">const { createBodyParser, createRouteMap } = require('tuft')
+      <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
-const app = createRouteMap({
-  preHandlers: [
-    createBodyParser()
-  ]
+const app = tuft({
+  preHandlers: [createBodyParser()]
 })
 
-app.set('/', (t) => {
+app.set('/', t => {
   console.log(t.request.body)
 })</code></pre>
       <p>By default, the request body is added to the request object as a <code class="code-inline">buffer</code>. If an
@@ -109,30 +103,27 @@ app.set('/', (t) => {
 
     <div class="api-entry">
       <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
-      <p>Even though the response body is sent by writing to an HTTP/2 stream, Tuft itself only supports sending a
-        single value by default. For situations where this is not ideal, the <strong>stream responder</strong> allows
-        you to send multiple chunks by including your logic in a callback function.</p>
+      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not ideal, the <strong>stream responder</strong> allows
+        you to send multiple chunks (i.e. write to a stream) by including your logic in a callback function.</p>
 
       <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the
         response object and setting it to a callback function, which then accepts a <code
           class="code-inline">write()</code> function as its first and only argument.</p>
 
-      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. The
+      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. Each invocation will write the passed chunk of data to the response stream. The
         response will end automatically when the callback function returns. It also optionally accepts the encoding type
         (a <code class="code-inline">string</code>) as the second argument.</p>
-      <pre><code class="language-js">const { createStreamResponder, createRouteMap } = require('tuft')
+      <pre><code class="language-js">const { createStreamResponder } = require('tuft')
 
-const app = createRouteMap({
-  responders: [
-    createStreamResponder()
-  ]
+const app = tuft({
+  responders: [createStreamResponder()]
 })
 
 app.set('/', () => {
   return {
-    writeStream: (write) => {
+    writeStream: write => {
       write('Hello, ')
-      write('world!', 'utf-8')  // Optionally set the encoding
+      write('world!', 'UTF-8')  // Optionally set the encoding
     }
   }
 })</code></pre>

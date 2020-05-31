@@ -22,13 +22,10 @@ docs: true
 }</code></pre>
 
     <p>To add a pre-handler to your route map, add it to an array and set that array as the value of the <code
-        class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you
-      call <code class="code-inline">createRouteMap()</code>.</p>
+        class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you create your application object.</p>
 
-    <pre><code class="language-js">const app = createRouteMap({
-  preHandlers: [
-    myPreHandler
-  ]
+    <pre><code class="language-js">const app = tuft({
+  preHandlers: [myPreHandler]
 })
 
 // 'myPreHandler' will be executed before all routes added to 'app'</code></pre>
@@ -37,7 +34,7 @@ docs: true
       all successive pre-handlers (and the main response handler itself) will be bypassed. In the following example,
       <code class="code-inline">preHandler1()</code> and <code class="code-inline">preHandler2()</code> will be
       executed, but <code class="code-inline">preHandler3()</code> and <code class="code-inline">handler()</code> will
-      not:</p>
+      not.</p>
 
     <pre><code class="language-js">function preHandler1() {
   // custom middleware logic
@@ -89,12 +86,14 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
         stream</a> object.</p>
 
     <pre><code class="language-js">function myResponder(response, stream) {
-  stream.respond()
-  stream.end(response.foo)
+  if (response.foo) {
+    stream.respond()
+    stream.end(response.foo)
+  }
 }</code></pre>
 
     <blockquote>
-      <p><strong>Note:</strong></p>
+      <h4>Note:</h4>
       <p>You should be familiar with how Node's <a
           href="https://nodejs.org/dist/latest/docs/api/http2.html#http2_core_api" target="_blank">core HTTP/2 API</a>
         works in order to write responder functions.</p>
@@ -126,7 +125,7 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
       to the underlying framework that the response has not been sent. Otherwise, it should utilize the passed stream
       object to handle the response. The outgoing headers object will contain any of the headers that have been set by
       pre-handlers or the response handler. If any additional headers are to be added, they should be added directly to
-      this object, before passing it to <code class="code-inline">stream.respond()</code>:</p>
+      this object, before passing it to <code class="code-inline">stream.respond()</code>.</p>
 
     <pre><code class="language-js">function myResponder(response, stream, headers) {
   const { foo } = response

@@ -8,18 +8,17 @@ docs: true
   {% include docs_nav.html %}
   <section id="docs-content">
     <h1>Enabling HTTPS</h1>
-    <p>The prevous example is all fine for development and testing purposes, but for real-world applications you'll be
-      needing to run a secure server. To do that, you have two options:</p>
-    <ol>
-      <li>Create your server by calling <code class="code-inline">.createSecureServer()</code> instead of <code
-          class="code-inline">.createServer()</code>.</li>
-      <li>Run a reverse proxy to route incoming HTTPS connections to your Tuft server. One of the most popular choices
+    <p>The prevous example is fine for development and testing purposes, but for real-world applications you'll need to run a secure server. To do that, you have two options:</p>
+    <ol class="numbered-list">
+      <li>Run a reverse proxy server to route incoming HTTPS connections to your Tuft server. One of the most popular choices
         for running an HTTP/2 reverse proxy web server is <a
           href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/" target="_blank">nginx</a>.</li>
+      <li>Create your server by calling <code class="code-inline">.createSecureServer()</code> instead of <code
+        class="code-inline">.createServer()</code>.</li>
     </ol>
-    <p>The ideal choice for a production server is number two, but if we were to go with number one, we would rewrite
+    <p>The ideal choice for a production server is number one, but if we were to go with number two, we would rewrite
       our code like so:</p>
-    <pre><code class="language-js">const { createRouteMap } = require('tuft')
+    <pre><code class="language-js">const tuft = require('tuft')
 const { readFileSync } = require('fs')
 
 ...
@@ -44,10 +43,10 @@ const server = app.createSecureServer({
       directory, then start the server again. If you visit <code class="code-inline">'https://localhost:3000'</code> in
       your web browser, you should be presented with the text <code class="code-inline">'Hello, world!'</code>.</p>
     <blockquote>
-      <p><strong>Note:</strong></p>
+      <h4>Note:</h4>
       <p>Since you've generated your own certificates, and the browser has no way to verify the owner of the server, it
-        will most likely warn you that you're visiting an untrusted webpage. As you are the owner, you can safely ignore
-        such warnings for this example.</p>
+        will warn you that you're visiting an untrusted webpage. As you are the owner, you can safely ignore
+        such warnings <em>for this example</em>.</p>
     </blockquote>
   </section>
 </main>

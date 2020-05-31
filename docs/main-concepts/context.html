@@ -8,9 +8,9 @@ docs: true
   {% include docs_nav.html %}
   <section id="docs-content">
     <h1>Context</h1>
-    <p>The <code class="code-inline">context</code> is an object that gets passed as the first and only argument to any
+    <p>The <em>context</em> is an object that gets passed as the first and only argument to any
       response handlers you define. In the below example it has been defined simply as <code
-        class="code-inline">t</code>:</p>
+        class="code-inline">t</code>.</p>
     <pre><code class="language-js">const response = (t) => {
   if (t.request.method === 'GET') {
     return { text: 'GET request received' }

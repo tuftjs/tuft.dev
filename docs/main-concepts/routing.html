@@ -12,7 +12,7 @@ docs: true
       requests a particular path, a Tuft server will first determine if there is a route that matches that path. If
       there is, Tuft will generate a response based on a user-defined handler.</p>
 
-    <p>To add a route, call the route map's <code class="code-inline">.set()</code> method:</p>
+    <p>To add a route, call the route map's <code class="code-inline">.set()</code> method.</p>
 
     <pre><code class="language-js">app.set('/foo', { status: 200 })</code></pre>
 
@@ -20,7 +20,7 @@ docs: true
       the server will respond with a <code class="code-inline http-status">200 OK</code> status code and no body.</p>
 
     <p>To add a route that only responds to a specific request method, prepend the path with the request method and a
-      space:</p>
+      space.</p>
 
     <pre><code class="language-js">app.set('GET /foo', { status: 200 })</code></pre>
 
@@ -31,7 +31,7 @@ docs: true
 
     <p>If a client requests a route that doesn't exist, the server will respond to the client with a <code
         class="code-inline http-status">404 Not Found</code> status code. You can override this behavior, or customize the 404
-      response, by adding a 'catch-all' route:</p>
+      response, by adding a "catch-all" route.</p>
 
     <pre><code class="language-js">app.set('/{**}', {
   status: 404,

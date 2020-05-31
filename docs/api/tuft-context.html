@@ -9,7 +9,7 @@ docs: true
   <section id="docs-content">
     <h1>TuftContext</h1>
     <p>The Tuft context object is passed as the first and only argument to the user-defined response handler, as well as
-      any plugins that are present on a particular route. It contains the <code class="code-inline">request</code>
+      any pre-handlers that are present on a particular route. It contains the <code class="code-inline">request</code>
       object as one of its properties, as well as several useful methods.</p>
 
     <h3 class="docs-sub-heading">Methods</h3>
@@ -17,14 +17,14 @@ docs: true
     <div class="api-entry">
       <h3><code>.setHeader(name, value)</code></h3>
       <p>Sets the outgoing header <code class="code-inline">name</code> to <code class="code-inline">value</code>.</p>
-      <pre><code class="language-js">t.setHeader('My-Custom-Header', 'My-Custom-Value')</code></pre>
+      <pre><code class="language-js">t.setHeader('my-custom-header', 'my-custom-value')</code></pre>
     </div>
 
     <div class="api-entry">
       <h3><code>.getHeader(name)</code></h3>
       <p>Returns the current value of outgoing header <code class="code-inline">name</code>. If <code
           class="code-inline">name</code> has not been set, then returns <code class="code-inline">undefined</code>.</p>
-      <pre><code class="language-js">t.getHeader('My-Custom-Header') // 'My-Custom-Value'</code></pre>
+      <pre><code class="language-js">t.getHeader('my-custom-header') // 'my-custom-value'</code></pre>
     </div>
 
     <div class="api-entry">
@@ -132,7 +132,7 @@ docs: true
         </p>
       </div>
       <p>In addition to the properties listed above, the request object may contain other properties that were added by
-        any plugins that are active on the current route.</p>
+        pre-handlers that are active on the current route.</p>
     </div>
   </section>
 </main>
