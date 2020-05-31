@@ -1,7 +1,3 @@
-- name: createRouteMap()
-  link: /docs/create-route-map/
-- name: createPromise()
-  link: /docs/create-promise/
 - name: TuftRouteMap
   link: /docs/tuft-route-map/
 - name: TuftContext
@@ -10,6 +6,8 @@
   link: /docs/tuft-server/
 - name: TuftSecureServer
   link: /docs/tuft-secure-server/
+- name: createPromise()
+  link: /docs/create-promise/
 - name: Response object
   link: /docs/response-object/
 - name: Built-in Extensions
