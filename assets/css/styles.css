@@ -433,6 +433,10 @@ code.http-status {
   font-weight: 700;
 }
 
+ol.numbered-list > li {
+  margin: 10px 15px;
+}
+
 ul.docs-list {
   list-style: none;
   padding: 10px 30px;
