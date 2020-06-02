@@ -12,8 +12,8 @@ docs: true
       version of Node, please update before continuing.</p>
     <p>Install Tuft via <a href="https://npmjs.com" target="_blank">NPM</a>.</p>
     <pre><code class="language-shell">$ npm install tuft</code></pre>
-    <p>In your application's entry point, start by importing the default exported function.</p>
-    <pre><code class="language-js">const tuft = require('tuft')</code></pre>
+    <p>Tuft has no default export. Instead, you should start by importing the named function <code class="code-inline">tuft</code>.</p>
+    <pre><code class="language-js">const { tuft } = require('tuft')</code></pre>
     <p>You can then invoke it to create a Tuft "application", which allows you to add routes.</p>
     <pre><code class="language-js">const app = tuft()
 
@@ -38,7 +38,7 @@ server.start()</code></pre>
 startServer()</code></pre>
 
     <p>You could potentially get the same result as all the above code by chaining everything together.</p>
-    <pre><code class="language-js">const tuft = require('tuft')
+    <pre><code class="language-js">const { tuft } = require('tuft')
 
 tuft()
   .set('GET /', {
