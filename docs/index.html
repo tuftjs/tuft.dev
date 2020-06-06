@@ -54,15 +54,10 @@ tuft()
         class="code-inline">'Hello, world!'</code> displayed.</p>
     <p>Except... <em>you wouldn't!</em></p>
     <p>As there are no browsers known to support <em>unencrypted</em> HTTP/2 connections, you would have to use
-      something like the command line client <strong>cURL</strong> to access the server in the example
+      a command line client like <a href="https://github.com/rav2040/h2c" target="_blank">h2c</a> to access the server in the example
       above:</p>
-    <pre><code class="language-shell">$ curl --http2-prior-knowledge http://localhost:3000
+    <pre><code class="language-shell">$ h2c http://localhost:3000
 Hello, world!</code></pre>
-    <blockquote>
-      <p>The <code class="code-inline">--http2-prior-knowledge</code> tag is only necessary for this example so that
-        cURL doesn't think we're trying to access an insecure HTTP/1 server. It is not necessary when using cURL to access a
-        secure HTTP/2 server.</p>
-    </blockquote>
     <p>Continue to the next section, <a href="/docs/enabling-https/">Enabling HTTPS</a>, to see how to access your
       server from a
       web browser.</p>
