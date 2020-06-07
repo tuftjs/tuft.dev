@@ -1,4 +1,4 @@
-title: "Tuft"
+title: "Tuft - HTTP/2 web framework for Node.js"
 
 plugins:
   - jekyll-sitemap
