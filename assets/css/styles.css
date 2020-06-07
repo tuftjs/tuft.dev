@@ -589,6 +589,7 @@ div#benchmarks-container span {
 
   div#logo {
     justify-content: center;
+    margin-bottom: 10px;
   }
 
   div#logo > h2 {
@@ -602,7 +603,7 @@ div#benchmarks-container span {
   }
 
   nav#nav-bar {
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
 
   nav#nav-bar > ul {
