@@ -421,6 +421,10 @@ section#docs-content p {
   padding: 20px 0 10px 0;
 }
 
+img#h2c-example {
+  height: 130px;
+}
+
 code.code-inline {
   background-color: #fff;
   color: #555;
