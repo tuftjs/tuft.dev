@@ -227,6 +227,11 @@ await routes.static('/', 'assets')
         <p>The port the server should listen on.</p>
         <p>Defaults to <code class="code-inline">0</code> (random port).</p>
       </div>
+      <div class="api-entry">
+        <h3><code>http1</code><code class="code-data-type">boolean</code></h3>
+        <p>If set to <code class="code-inline">true</code>, the returned server object will be an HTTP/1 server instead of HTTP/2.</p>
+        <p>Defaults to <code class="code-inline">false</code>.</p>
+      </div>
     </div>
 
     <div class="api-entry">
