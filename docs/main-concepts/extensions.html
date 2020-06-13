@@ -97,6 +97,7 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
       <p>You should be familiar with how Node's <a
           href="https://nodejs.org/dist/latest/docs/api/http2.html#http2_core_api" target="_blank">core HTTP/2 API</a>
         works in order to write responder functions.</p>
+      <p>It should also be noted that Tuft's HTTP/1 compatibility layer only partially implements the functionality of the core HTTP/2 API stream object. Specifically, only the <code class="code-inline">stream.respond()</code> and <code class="code-inline">stream.respondWithFile()</code> methods. At present, using any other method will result in errors when a user creates a server using the <code class="code-inline">http1</code> option. If this is not desirable, please feel free to open an issue or submit a pull request on the <a href="https://github.com/tuftjs/tuft" target="_blank">offical GitHub repository</a>!</p>
     </blockquote>
 
     <p>To make use of a responder, add it to your route map by setting the <code class="code-inline">responders</code>
