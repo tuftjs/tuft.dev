@@ -1,16 +1,6 @@
-title: Tuft
-tagline: HTTP/2 web framework for Node.js
+title: Tuft - HTTP/2 web framework for Node.js
 url: https://www.tuft.dev
 author: Stuart Kennedy
-keywords:
-  - Tuft
-  - HTTP/2
-  - http2
-  - web
-  - framework
-  - node
-  - nodejs
-  - node.js
 
 plugins:
   - jekyll-sitemap
