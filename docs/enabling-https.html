@@ -8,11 +8,9 @@ docs: true
   {% include docs_nav.html %}
   <section id="docs-content">
     <h1>Enabling HTTPS</h1>
-    <p>The prevous example is fine for development and testing purposes, but for real-world applications you'll need to run a secure server. To do that, you have two options:</p>
+    <p>The prevous example is fine for development and testing purposes, but for real-world applications, or if you want to access your server from a browser, you'll need to run a secure server. To do that, you have two options:</p>
     <ol class="numbered-list">
-      <li>Run a reverse proxy server to route incoming HTTPS connections to your Tuft server. One of the most popular choices
-        for running an HTTP/2 reverse proxy web server is <a
-          href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/" target="_blank">nginx</a>.</li>
+      <li>Use a reverse proxy server to route incoming HTTPS connections to your Tuft server.</li>
       <li>Create your server by calling <code class="code-inline">.createSecureServer()</code> instead of <code
         class="code-inline">.createServer()</code>.</li>
     </ol>
