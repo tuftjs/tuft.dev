@@ -49,54 +49,41 @@ app.set('/foo', t => {
     </div>
 
     <div class="api-entry">
-      <h3 id="body-parser"><code>createBodyParser([options])</code></h3>
+      <h3 id="body-parser"><code>createBodyParser(type [, maxSize])</code></h3>
       <p>By default, Tuft does not include the request body in the request object, as doing so has a significant
         performance impact. <strong>Body parser</strong> is therefore provided as an optional pre-handler extension that
-        can be added only to the routes that require it. It adds a <code class="code-inline">body</code> property to the
-        request object, which will be set to the value of the body for a given request. If there is no body, it will be
-        set to <code class="code-inline">null</code>.</p>
+        can be added only to the routes that require it. If a request includes a body that matches the provided <code class="code-inline">type</code>, then the parsed body data will be added to the request object as <code class="code-inline">body</code>, unless the request body size is greater than that of the provided <code class="code-inline">maxSize</code>.</p>
       <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createBodyParser()]
+  preHandlers: [createBodyParser('json')]
 })
 
 app.set('/', t => {
   console.log(t.request.body)
 })</code></pre>
-      <p>By default, the request body is added to the request object as a <code class="code-inline">buffer</code>. If an
-        <code class="code-inline">options</code> object is provided with a valid property that matches the incoming
-        <code class="code-inline">'content-type'</code> header, it will convert the <code
-          class="code-inline">buffer</code> into the appropriate format.</p>
-
-      <p>Each of the optional properties below can be set to either a <code class="code-inline">boolean</code> or a
-        <code class="code-inline">number</code>.</p>
-      <ul class="docs-list">
-        <li>If set to <code class="code-inline">false</code>, the given type will not be converted.</li>
-        <li>If set to <code class="code-inline">true</code>, the given type will be converted when the request body size
-          is less than or equal to the default limit of <code class="code-inline">1048576</code> bytes (1 MiB).</li>
-        <li>If set to a <code class="code-inline">number</code>, the given type will be converted when the request body
-          size is less than or equal to that number (in bytes).</li>
-      </ul>
+      <p>The <code class="code-inline">type</code> argument can be any of the following:</p>
       <div class="api-entry">
-        <h3><code>text</code> <code class="code-data-type">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code class="code-inline">text/*</code> will be converted to
-          a <code class="code-inline">string</code>, provided it is less than or equal to the maximum body size.</p>
+        <h3><code>'raw'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/octet-stream'</code>, the body will be parsed as a <code class="code-inline">Buffer</code> object.</p>
       </div>
 
       <div class="api-entry">
-        <h3><code>json</code> <code class="code-data-type">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code class="code-inline">application/json</code> will be
-          converted to an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>,
-          provided it is less than or equal to the maximum body size.</p>
+        <h3><code>'text'</code></h3>
+        <p>If the request content type is <code class="code-inline">'text/*'</code>, the body will be parsed as a <code class="code-inline">string</code>.</p>
       </div>
 
       <div class="api-entry">
-        <h3><code>urlEncoded</code> <code class="code-data-type">boolean | number</code></h3>
-        <p>If this option is set, any request body of type <code
-            class="code-inline">application/x-www-form-urlencoded</code> will be converted to an <code
-            class="code-inline">object</code>, provided it is less than or equal to the maximum body size.</p>
+        <h3><code>'json'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/json'</code>, the body will be parsed as an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>.</p>
       </div>
+
+      <div class="api-entry">
+        <h3><code>'urlEncoded'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/x-www-form-urlencoded'</code>, the body will be parsed as an <code class="code-inline">object</code>.</p>
+      </div>
+
+      <p>The optional <code class="code-inline">maxSize</code> argument sets the maximum body size that can be parsed. Request bodies of a greater size will be ignored. If not set, defaults to <code class="code-inline">1048576</code> bytes (1 MiB).</p>
     </div>
 
     <h3 class="docs-sub-heading">Responders</h3>
