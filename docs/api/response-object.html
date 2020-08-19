@@ -8,7 +8,7 @@ docs: true
   {% include docs_nav.html %}
   <section id="docs-content">
     <h1>Response object</h1>
-    <p>The response object is an ordinary JavaScript object with no required properties. When you add a route, you
+    <p>The Tuft response object is an ordinary JavaScript object with no required properties. When you add a route, you
       either define a response object, or you define a function that <em>returns</em> a response object (a response
       <em>handler</em>). Tuft uses the properties of said object to determine how to respond to a
       client request.</p>
@@ -27,7 +27,7 @@ app.set('GET /', () => {
     <p>Tuft is able to handle the following response object properties (all optional):</p>
     <div class="api-entry">
       <h3><code>status</code><code class="code-data-type">number</code></h3>
-      <p>Sets the <code class="code-inline">':status'</code> header to the given value.</p>
+      <p>Sets the outgoing HTTP status code to the given value.</p>
       <p>Defaults to <code class="code-inline">200</code>.</p>
     </div>
     <div class="api-entry">
