@@ -5,25 +5,23 @@ permalink: /benchmarks/
 <div class="main-margin left"></div>
 <main id="benchmarks">
   <div id="benchmarks-container">
-    <p>This page contains the benchmark results for Tuft compared with a few other popular web frameworks that also
-      support HTTP/2. For more information on how the benchmarks were set up, and to view the specific application code
+    <p>This page contains the benchmark results for Tuft compared with other popular Node.js web frameworks. For more information on how the benchmarks were set up, and to view the specific application code
       used for each framework, see the <a href="https://github.com/tuftjs/bench" target="_blank">GitHub repository</a>.
     </p>
 
-    <p>The benchmark results below use an HTTP/2 load testing client called <code class="code-inline">h2load</code>,
-      which comes bundled with <a href="https://nghttp2.org" target="_blank">nghttp2</a>.</p>
+    <p>The benchmark results below were obtained using <a href="http://httpd.apache.org/docs/2.4/programs/ab.html" target="_blank">ApacheBench</a>.</p>
 
     <ul class="docs-list">
-      <li><strong>Date:</strong> May 14, 2020</li>
-      <li><strong>Hardware:</strong> Digital Ocean CPU-optimized droplet (4 vCPUS, 8GB)</li>
-      <li><strong>OS:</strong> Ubuntu 18.04.3 (LTS) x64</li>
-      <li><strong>Node version:</strong> 12.16.3</li>
+      <li><strong>Date:</strong> August 21, 2020</li>
+      <li><strong>Hardware:</strong> Digital Ocean CPU-optimized droplet</li>
+      <li><strong>OS:</strong> Ubuntu 20.04 (LTS) x64</li>
+      <li><strong>Node version:</strong> 12.18.3</li>
       <li><strong>Client command:</strong> <code
-          class="code-inline">h2load -c100 -m100 --duration=60 --warm-up-time=30</code></li>
+          class="code-inline">ab -k -c 100 -n 100000</code></li>
     </ul>
 
     {% for item in site.data.benchmarks.results %}
-      <h3>{{ item.name }} - <span>{{ item.result }} req/s</span></h3>
+      <h3>{{ item.name }} - <span>{{ item.result }} req/sec</span></h3>
       <pre><code class="language-none">{{ item.data }}</code></pre>
     {% endfor %}
   </div>
