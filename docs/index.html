@@ -29,8 +29,8 @@ server.start()</code></pre>
       actually returns a promise, so you should wait for the promise to resolve if you want to know the server is
       actually running.</p>
     <pre><code class="language-js">async function startServer() {
-  await server.start()
-  console.log(`Server listening at http://${server.host}:${server.port}`)
+  const { host, port } = await server.start()
+  console.log(`Server listening at http://${host}:${port}`)
 }
 
 startServer()</code></pre>
@@ -42,8 +42,8 @@ tuft()
   .set('GET /', { text: 'Hello, world!' })
   .createServer({ port: 3000 })
   .start()
-  .then(() => {
-    console.log('Server is running')
+  .then(({ host, port }) => {
+    console.log(`Server listening at http://${host}:${port}`)
   })</code></pre>
     <p>Congratulations! You now have a working "Hello, world!" Tuft server.</p>
   </section>
