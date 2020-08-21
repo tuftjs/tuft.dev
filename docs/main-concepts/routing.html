@@ -30,12 +30,13 @@ docs: true
     <h3 class="docs-sub-heading">Custom 404 handling</h3>
 
     <p>If a client requests a route that doesn't exist, the server will respond to the client with a <code
-        class="code-inline http-status">404 Not Found</code> status code. You can override this behavior, or customize the 404
+        class="code-inline http-status">404 Not Found</code> status code and an empty response body by default. You can override this behavior, or customize the 404
       response, by adding a "catch-all" route.</p>
 
     <pre><code class="language-js">app.set('/{**}', {
   status: 404,
   json: {
+    statusCode: 404,
     message: 'Not Found'
   }
 })</code></pre>
