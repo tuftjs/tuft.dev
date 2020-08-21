@@ -61,7 +61,7 @@
       90%      5
       95%      6
       98%      9
-      99%      9`
+      99%      9
      100%     18 (longest request)
 
 - name: 'Fastify'
