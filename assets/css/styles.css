@@ -477,6 +477,21 @@ div.api-entry > div.api-entry {
   background-color: #e2e2e2;
 }
 
+h1.page-title {
+  text-align: center;
+}
+
+h2.page-title {
+  text-align: center;
+}
+
+img#profile-photo {
+  display: block;
+  max-width: 200px;
+  border-radius: 100%;
+  margin: 30px auto;
+}
+
 main#benchmarks,
 main#about {
   border-top: 2px solid #369;
