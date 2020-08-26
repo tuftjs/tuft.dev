@@ -35,6 +35,17 @@ const routes = tuft()</code></pre>
         <p>Defaults to <code class="code-inline">'/'</code>.</p>
       </div>
       <div class="api-entry">
+        <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
+        <p>Indicates whether or not the application should trust the following incoming headers:</p>
+        <ul class="docs-list">
+          <li><code class="code-inline">'X-Forwarded-For'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Port'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
+        </ul>
+        <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
+        <p>Defaults to <code class="code-inline">true</code>.</p>
+      </div>
+      <div class="api-entry">
         <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
         <p>An array of Tuft pre-handlers that are executed serially before the response handler. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
         <p>Defaults to <code class="code-inline">[]</code>.</p>

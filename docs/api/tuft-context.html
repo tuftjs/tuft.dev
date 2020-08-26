@@ -88,6 +88,11 @@ docs: true
     <h3 class="docs-sub-heading">Properties</h3>
 
     <div class="api-entry">
+      <h3><code>secure</code> <code class="code-data-type">boolean</code></h3>
+      <p>Indicates whether or not the current HTTP transaction is secure (i.e. <code class="code-inline">t.request.protocol === 'https'</code>)</p>
+    </div>
+
+    <div class="api-entry">
       <h3><code>request</code><code class="code-data-type">object</code></h3>
       <p>Contains the following properties related to the incoming HTTP request:</p>
 
@@ -104,6 +109,16 @@ docs: true
       <div class="api-entry api-entry-indented">
         <h3><code>pathname</code><code class="code-data-type">string</code></h3>
         <p>The pathname for the current request, without the query string (if one existed).</p>
+      </div>
+
+      <div class="api-entry api-entry-indented">
+        <h3><code>protocol</code><code class="code-data-type">string</code></h3>
+        <p>The HTTP scheme of the incoming request (<code class="code-inline">'http'</code> or <code class="code-inline">'https'</code>).</p>
+      </div>
+
+      <div class="api-entry api-entry-indented">
+        <h3><code>ip</code><code class="code-data-type">string</code></h3>
+        <p>The IP address of the remote client.</p>
       </div>
 
       <div class="api-entry api-entry-indented">
