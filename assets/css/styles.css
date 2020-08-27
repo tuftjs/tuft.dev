@@ -492,6 +492,7 @@ img#profile-photo {
   margin: 30px auto;
 }
 
+main#extensions,
 main#benchmarks,
 main#about {
   border-top: 2px solid #369;
@@ -500,6 +501,7 @@ main#about {
   padding: 15px;
 }
 
+div#extensions-container,
 div#benchmarks-container,
 div#about-container {
   background-color: #eee;
@@ -508,6 +510,7 @@ div#about-container {
   padding: 50px;
 }
 
+div#extensions-container > h2,
 div#benchmarks-container > h2,
 div#about-container > h2 {
   font-size: 1.6rem;
@@ -519,6 +522,7 @@ div#about-container > h2 {
   margin: 10px 0 20px 0;
 }
 
+div#extensions-container > h3,
 div#benchmarks-container > h3,
 div#about-container > h3 {
   margin-top: 30px;
@@ -526,8 +530,9 @@ div#about-container > h3 {
   font-weight: 600;
 }
 
+div#extensions-container p,
 div#benchmarks-container p,
-div#about-container p  {
+div#about-container p {
   margin: 10px 0;
 }
 
@@ -591,6 +596,7 @@ div#benchmarks-container span {
     font-size: 0.8rem;
   }
 
+  div#extensions-container > h2,
   div#benchmarks-container > h2,
   div#about-container > h2 {
     font-size: 1.5rem;
@@ -681,11 +687,13 @@ div#benchmarks-container span {
       font-size: 1rem;
   }
 
+  div#extensions-container > h2,
   div#benchmarks-container > h2,
   div#about-container > h2 {
     font-size: 2rem;
   }
 
+  div#extensions-container,
   div#benchmarks-container,
   div#about-container {
     font-size: 1.1rem;
@@ -783,11 +791,13 @@ div#benchmarks-container span {
     font-size: 0.85rem;
   }
 
+  div#extensions-container > h2,
   div#benchmarks-container > h2,
   div#about-container > h2 {
     font-size: 1.2rem;
   }
 
+  div#extensions-containerm
   div#benchmarks-container,
   div#about-container {
     font-size: 0.75rem;
@@ -816,11 +826,13 @@ div#benchmarks-container span {
     flex-direction: column;
   }
 
+  div#extensions-container > h2,
   div#benchmarks-container > h2,
   div#about-container > h2 {
     font-size: 1rem;
   }
 
+  div#extensions-container,
   div#benchmarks-container,
   div#about-container {
     font-size: 0.75rem;

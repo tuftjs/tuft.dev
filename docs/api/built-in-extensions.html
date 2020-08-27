@@ -12,7 +12,7 @@ docs: true
     <p>Tuft comes with a few built-in extensions as named exports. When you import a built-in extension, you are
       importing a factory function that must be called to return the extension itself.</p>
 
-    <h3 class="docs-sub-heading">Pre-handlers</h3>
+    <h3 class="docs-sub-heading">Prehandlers</h3>
 
     <div class="api-entry">
       <h3 id="search-params"><code>createSearchParams()</code></h3>
@@ -51,7 +51,7 @@ app.set('/foo', t => {
     <div class="api-entry">
       <h3 id="body-parser"><code>createBodyParser(type [, maxSize])</code></h3>
       <p>By default, Tuft does not include the request body in the request object, as doing so has a significant
-        performance impact. <strong>Body parser</strong> is therefore provided as an optional pre-handler extension that
+        performance impact. <strong>Body parser</strong> is therefore provided as an optional prehandler extension that
         can be added only to the routes that require it. If a request includes a body that matches the provided <code class="code-inline">type</code>, then the parsed body data will be added to the request object as <code class="code-inline">body</code>, unless the request body size is greater than that of the provided <code class="code-inline">maxSize</code>.</p>
       <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
@@ -90,7 +90,7 @@ app.set('/', t => {
 
     <div class="api-entry">
       <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
-      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not ideal, the <strong>stream responder</strong> allows
+      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not ideal, the <em>stream responder</em> allows
         you to send multiple chunks (i.e. write to a stream) by including your logic in a callback function.</p>
 
       <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the

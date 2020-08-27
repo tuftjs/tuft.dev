@@ -8,20 +8,20 @@ docs: true
   {% include docs_nav.html %}
   <section id="docs-content">
     <h1>Extensions</h1>
-    <p>Tuft extensions are split between two types: <strong>pre-handlers</strong> and <strong>responders</strong>.</p>
-    <h3 class="docs-sub-heading" id="pre-handlers">Pre-handlers</h3>
-    <p>A pre-handler is a function akin to a middleware function in frameworks such as <a href="https://expressjs.com"
+    <p>Tuft extensions are split between two types: <em>prehandlers</em> and <em>responders</em>.</p>
+    <h3 class="docs-sub-heading" id="prehandlers">Prehandlers</h3>
+    <p>A prehandler is a function akin to a middleware function in frameworks such as <a href="https://expressjs.com"
         target="_blank">Express</a> or <a href="https://koajs.com" target="_blank">Koa</a>. A route can have an array of
-      zero or more pre-handler functions which are executed serially, in insertion order, before the response handler is
+      zero or more prehandler functions which are executed serially, in insertion order, before the response handler is
       called. A <a href="/docs/tuft-context">TuftContext</a> object is passed as the first and only argument to each
-      pre-handler. This enables you to share logic between multiple routes by writing your own pre-handler functions, or
-      you can import pre-handlers from external libraries that were written by yourself or other developers.</p>
+      prehandler. This enables you to share logic between multiple routes by writing your own prehandler functions, or
+      you can import prehandlers from external libraries that were written by yourself or other developers.</p>
 
     <pre><code class="language-js">function myPreHandler(t) {
   // my custom middleware logic
 }</code></pre>
 
-    <p>To add a pre-handler to your route map, add it to an array and set that array as the value of the <code
+    <p>To add a prehandler to your route map, add it to an array and set that array as the value of the <code
         class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you create your application object.</p>
 
     <pre><code class="language-js">const app = tuft({
@@ -30,8 +30,8 @@ docs: true
 
 // 'myPreHandler' will be executed before all routes added to 'app'</code></pre>
 
-    <p>If a pre-handler returns a response object, a response will be sent based on the properties in that object, and
-      all successive pre-handlers (and the main response handler itself) will be bypassed. In the following example,
+    <p>If a prehandler returns a response object, a response will be sent based on the properties in that object, and
+      all successive prehandlers (and the main response handler itself) will be bypassed. In the following example,
       <code class="code-inline">preHandler1()</code> and <code class="code-inline">preHandler2()</code> will be
       executed, but <code class="code-inline">preHandler3()</code> and <code class="code-inline">handler()</code> will
       not.</p>
@@ -72,7 +72,7 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
   // Don't do this, as 'secure' is a pre-existing property
   t.request.secure = true
 }</code></pre>
-    <p>Tuft comes packaged with the following built-in pre-handlers that you can import:</p>
+    <p>Tuft comes packaged with the following built-in prehandlers that you can import:</p>
     <ul class="docs-list">
       <li><a href="/docs/built-in-extensions#search-params">Search params</a></li>
       <li><a href="/docs/built-in-extensions#cookie-parser">Cookie parser</a></li>
@@ -110,7 +110,7 @@ app.set('/', handler) // This route will return a 400 status code</code></pre>
 // 'myResponder' will be executed before Tuft's built-in responders</code></pre>
     <p>Tuft comes packaged with one built-in responder that you can import:</p>
     <ul class="docs-list">
-      <li><a href="/docs/built-in-extensions#stream-responder">Stream responder</a></li>
+      <li><a href="/docs/built-in-extensions#stream-responder">Stream</a></li>
     </ul>
     <h4>How responders work</h4>
     <p>A responder receives two parameters:</p>
