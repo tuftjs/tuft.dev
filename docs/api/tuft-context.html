@@ -17,14 +17,20 @@ docs: true
     <div class="api-entry">
       <h3><code>.setHeader(name, value)</code></h3>
       <p>Sets the outgoing header <code class="code-inline">name</code> to <code class="code-inline">value</code>.</p>
-      <pre><code class="language-js">t.setHeader('my-custom-header', 'my-custom-value')</code></pre>
+      <pre><code class="language-js">t.setHeader('foo', 'bar')</code></pre>
     </div>
 
     <div class="api-entry">
       <h3><code>.getHeader(name)</code></h3>
       <p>Returns the current value of outgoing header <code class="code-inline">name</code>. If <code
           class="code-inline">name</code> has not been set, then returns <code class="code-inline">undefined</code>.</p>
-      <pre><code class="language-js">t.getHeader('my-custom-header') // 'my-custom-value'</code></pre>
+      <pre><code class="language-js">t.getHeader('foo') // 'bar'</code></pre>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.getHeaders()</code></h3>
+      <p>Returns an object containing all the outgoing headers that are currently set.</p>
+      <pre><code class="language-js">t.getHeaders() // { foo: 'bar' }</code></pre>
     </div>
 
     <div class="api-entry">
