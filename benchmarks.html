@@ -7,25 +7,76 @@ permalink: /benchmarks/
   <div id="benchmarks-container">
     <h1 class="page-title">Benchmarks</h1>
     <br>
-    <p>This page contains the benchmark results for Tuft compared with other popular Node.js web frameworks. For more information on how the benchmarks were set up, and to view the specific application code
+    <p>This page contains the benchmark results for Tuft compared with other popular Node.js web frameworks. For more
+      information on how the benchmarks were set up, and to view the specific application code
       used for each framework, see the <a href="https://github.com/tuftjs/bench" target="_blank">GitHub repository</a>.
     </p>
-
-    <p>The benchmark results below were obtained using <a href="http://httpd.apache.org/docs/2.4/programs/ab.html" target="_blank">ApacheBench</a>, and are ordered from fastest to slowest.</p>
-
+    <p>The benchmark results below were obtained using <a href="https://github.com/mcollina/autocannon#readme"
+        target="_blank">AutoCannon</a>, and are ordered from fastest to slowest.</p>
+    <h2>Results</h2>
     <ul class="docs-list">
-      <li><strong>Date:</strong> August 21, 2020</li>
+      <li><strong>Date:</strong> September 16, 2020</li>
       <li><strong>Hardware:</strong> Digital Ocean CPU-optimized droplet</li>
       <li><strong>OS:</strong> Ubuntu 20.04 (LTS) x64</li>
-      <li><strong>Node version:</strong> 12.18.3</li>
-      <li><strong>Client command:</strong> <code
-          class="code-inline">ab -k -c 100 -n 100000</code></li>
+      <li><strong>Node version:</strong> 12.18.4</li>
+      <li><strong>Client command:</strong> <code class="code-inline">autocannon -c 100 -d 40</code></li>
     </ul>
-
-    {% for item in site.data.benchmarks.results %}
-      <h3>{{ item.name }} - <span>{{ item.result }} req/sec</span></h3>
-      <pre><code class="language-none">{{ item.data }}</code></pre>
-    {% endfor %}
+    <br>
+    <table class="pure-table pure-table-bordered">
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Version</th>
+          <th>Req/s</th>
+          <th>Bytes/s (MB)</th>
+          <th>Latency (ms)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pure-table-odd">
+          <td><em>none</em></td>
+          <td>N/A</td>
+          <td>22,474</td>
+          <td>3.48</td>
+          <td>4.08</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td><strong>Tuft</strong></td>
+          <td>2.3.1</td>
+          <td>20,872</td>
+          <td>3.23</td>
+          <td>4.17</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Fastify</td>
+          <td>3.4.1</td>
+          <td>18,858</td>
+          <td>2.92</td>
+          <td>5.08</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Koa</td>
+          <td>2.13.0</td>
+          <td>14,959</td>
+          <td>2.32</td>
+          <td>6.14</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Hapi</td>
+          <td>20.0.0</td>
+          <td>12,583</td>
+          <td>2.53</td>
+          <td>7.28</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Express</td>
+          <td>4.17.1</td>
+          <td>6,037</td>
+          <td>1.32</td>
+          <td>16.1</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </main>
 <div class="main-margin right"></div>

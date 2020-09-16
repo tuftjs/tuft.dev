@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
-    {% seo %}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/prism.css">
-  </head>
-  <body>
-    <div id="container">
-      {% include header.html %}
-      {{ content }}
-      {% include footer.html %}
-    </div>
-    <script src="/assets/scripts/prism.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  {% seo %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/prism.css">
+</head>
+
+<body>
+  <div id="container">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
 </html>
