@@ -107,23 +107,41 @@ const app = tuft({
 })
 
 app.set('/', t => {
-  console.log(t.request.session)
+  const { session } = t.request
+  session.foo = 'bar'
+  return { json: session } // {"foo":"bar"}
 })</code></pre>
       <p>By default, server side storage is simply an instance of <code class="code-inline">Map</code>, and is therefore
-      not intended for production environments. For a production environment, a custom <code
-        class="code-inline">store</code> can be provided.</p>
+        not intended for production environments. For a production environment, a custom <code
+          class="code-inline">store</code> can be provided. See the <em>options</em> information below for a detailed explanation.</p>
       <pre><code class="language-js">const { createSession } = require('tuft')
 const myCustomStore = require('./custom-store')
 
 const app = tuft({
   preHandlers: [createSession({
-    name: 'sessionData',
     store: myCustomStore,
   })]
 })
 
 app.set('/', t => {
-  console.log(t.request.sessionData)
+  const { session } = t.request
+  session.foo = 'bar'
+  return { json: session } // {"foo":"bar"}
+})</code></pre>
+      <p>The property name for the session object can be customized by providing the <code
+          class="code-inline">name</code> option.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createSession({
+    name: 'user'
+  })]
+})
+
+app.set('/', t => {
+  const { user } = t.request
+  user.id = '1234'
+  return { text: `Your user ID is ${user.id}` } // Your user ID is 1234
 })</code></pre>
       <p>The <code class="code-inline">options</code> argument is an object that includes any of the following:</p>
       <div class="api-entry">
