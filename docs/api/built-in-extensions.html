@@ -52,7 +52,10 @@ app.set('/foo', t => {
       <h3 id="body-parser"><code>createBodyParser(type [, maxSize])</code></h3>
       <p>By default, Tuft does not include the request body in the request object, as doing so has a significant
         performance impact. <strong>Body parser</strong> is therefore provided as an optional prehandler extension that
-        can be added only to the routes that require it. If a request includes a body that matches the provided <code class="code-inline">type</code>, then the parsed body data will be added to the request object as <code class="code-inline">body</code>, unless the request body size is greater than that of the provided <code class="code-inline">maxSize</code>.</p>
+        can be added only to the routes that require it. If a request includes a body that matches the provided <code
+          class="code-inline">type</code>, then the parsed body data will be added to the request object as <code
+          class="code-inline">body</code>, unless the request body size is greater than that of the provided <code
+          class="code-inline">maxSize</code>.</p>
       <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
 const app = tuft({
@@ -65,39 +68,123 @@ app.set('/', t => {
       <p>The <code class="code-inline">type</code> argument can be any of the following:</p>
       <div class="api-entry">
         <h3><code>'raw'</code></h3>
-        <p>If the request content type is <code class="code-inline">'application/octet-stream'</code>, the body will be parsed as a <code class="code-inline">Buffer</code> object.</p>
+        <p>If the request content type is <code class="code-inline">'application/octet-stream'</code>, the body will be
+          parsed as a <code class="code-inline">Buffer</code> object.</p>
       </div>
 
       <div class="api-entry">
         <h3><code>'text'</code></h3>
-        <p>If the request content type is <code class="code-inline">'text/*'</code>, the body will be parsed as a <code class="code-inline">string</code>.</p>
+        <p>If the request content type is <code class="code-inline">'text/*'</code>, the body will be parsed as a <code
+            class="code-inline">string</code>.</p>
       </div>
 
       <div class="api-entry">
         <h3><code>'json'</code></h3>
-        <p>If the request content type is <code class="code-inline">'application/json'</code>, the body will be parsed as an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>.</p>
+        <p>If the request content type is <code class="code-inline">'application/json'</code>, the body will be parsed
+          as an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>.</p>
       </div>
 
       <div class="api-entry">
         <h3><code>'urlEncoded'</code></h3>
-        <p>If the request content type is <code class="code-inline">'application/x-www-form-urlencoded'</code>, the body will be parsed as an <code class="code-inline">object</code>.</p>
+        <p>If the request content type is <code class="code-inline">'application/x-www-form-urlencoded'</code>, the body
+          will be parsed as an <code class="code-inline">object</code>.</p>
       </div>
 
-      <p>The optional <code class="code-inline">maxSize</code> argument sets the maximum body size that can be parsed. Request bodies of a greater size will be ignored. If not set, defaults to <code class="code-inline">1048576</code> bytes (1 MiB).</p>
+      <p>The optional <code class="code-inline">maxSize</code> argument sets the maximum body size that can be parsed.
+        Request bodies of a greater size will be ignored. If not set, defaults to <code
+          class="code-inline">1048576</code> bytes (1 MiB).</p>
+    </div>
+
+    <div class="api-entry">
+      <h3 id="session"><code>createSession([options])</code></h3>
+      <p>Creates a session using the provided <code class="code-inline">options</code>. A session object will then be
+        added to every request, and all data within that object is persisted between requests from the same client.
+        Session data is stored on the server, and a cookie with a random session ID is set on the client.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createSession()]
+})
+
+app.set('/', t => {
+  console.log(t.request.session)
+})</code></pre>
+      <p>By default, server side storage is simply an instance of <code class="code-inline">Map</code>, and is therefore
+      not intended for production environments. For a production environment, a custom <code
+        class="code-inline">store</code> can be provided.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+const myCustomStore = require('./custom-store')
+
+const app = tuft({
+  preHandlers: [createSession({
+    name: 'sessionData',
+    store: myCustomStore,
+  })]
+})
+
+app.set('/', t => {
+  console.log(t.request.sessionData)
+})</code></pre>
+      <p>The <code class="code-inline">options</code> argument is an object that includes any of the following:</p>
+      <div class="api-entry">
+        <h3><code>name</code></h3>
+        <p>The property name that will be added to the Tuft request object.</p>
+        <p>Defaults to <code class="code-inline">'session'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cookieName</code></h3>
+        <p>A <code class="code-inline">string</code> that will be used as the key when setting the cookie. If not
+          provided, the cookie name will be set to the session name plus <code class="code-inline">'_id'</code>.</p>
+        <p>If no session or cookie name is provided, the cookie name will be set to <code
+            class="code-inline">'session_id'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cookieOptions</code></h3>
+        <p>An object consisting of the same options accepted by the <code class="code-inline">.setCookie()</code> method
+          of <a href="/docs/tuft-context/#set-cookie">TuftContext</a>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>encoding</code></h3>
+        <p>The encoding used when generating the random session ID. Must be one of either <code
+            class="code-inline">'base64'</code> or <code class="code-inline">'hex'</code>.</p>
+        <p>Defaults to <code class="code-inline">'base64'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>store</code></h3>
+        <p>A custom store implementation, which overrides the default behavior of using a JavaScript <code
+            class="code-inline">Map</code> as the store. The custom store <em>must</em> be an object with at least the
+          following three methods:</p>
+        <ul class="docs-list">
+          <li><code class="code-inline">.set(name, sessionObject)</code></li>
+          <p>Accepts a name and a session object, and stores the object indexed by that name. Returns <code
+              class="code-inline">undefined</code>, or a promise that resolves to <code
+              class="code-inline">undefined</code>.</p>
+          <li><code class="code-inline">.get(name)</code></li>
+          <p>Returns the session object (or a promise that resolves to the session object) indexed by the provided name.
+          </p>
+          <li><code class="code-inline">.delete(name)</code></li>
+          <p>Removes the session object indexed by the provided name from the store. Returns <code
+              class="code-inline">undefined</code>, or a promise that resolves to <code
+              class="code-inline">undefined</code>.</p>
+        </ul>
+      </div>
     </div>
 
     <h3 class="docs-sub-heading">Responders</h3>
 
     <div class="api-entry">
       <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
-      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not ideal, the <em>stream responder</em> allows
+      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself
+        ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not
+        ideal, the <em>stream responder</em> allows
         you to send multiple chunks (i.e. write to a stream) by including your logic in a callback function.</p>
 
       <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the
         response object and setting it to a callback function, which then accepts a <code
           class="code-inline">write()</code> function as its first and only argument.</p>
 
-      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. Each invocation will write the passed chunk of data to the response stream. The
+      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. Each
+        invocation will write the passed chunk of data to the response stream. The
         response will end automatically when the callback function returns. It also optionally accepts the encoding type
         (a <code class="code-inline">string</code>) as the second argument.</p>
       <pre><code class="language-js">const { createStreamResponder } = require('tuft')
