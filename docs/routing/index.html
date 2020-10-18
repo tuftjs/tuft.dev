@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/docs/routing/" />
+<meta property="og:url" content="https://www.tuft.dev/docs/routing/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/docs/routing/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="docs">
+  <section id="docs-nav">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/" class="docs-nav-link" >
+        Quick start</a>
+    </li>
+    
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/application/" class="docs-nav-link" >
+        Application</a>
+    </li>
+    
+    <li>
+      <a href="/docs/routing/" class="docs-nav-link current"
+        >
+        Routing</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-handling/" class="docs-nav-link" >
+        Response handling</a>
+    </li>
+    
+    <li>
+      <a href="/docs/context/" class="docs-nav-link" >
+        Context</a>
+    </li>
+    
+    <li>
+      <a href="/docs/extensions/" class="docs-nav-link" >
+        Extensions</a>
+    </li>
+    
+  </ul>
+  <h4>API</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/tuft-route-map/" class="docs-nav-link" >
+        TuftRouteMap</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-context/" class="docs-nav-link" >
+        TuftContext</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-server/" class="docs-nav-link" >
+        TuftServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-secure-server/" class="docs-nav-link" >
+        TuftSecureServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/create-promise/" class="docs-nav-link" >
+        createPromise()</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-object/" class="docs-nav-link" >
+        Response object</a>
+    </li>
+    
+    <li>
+      <a href="/docs/built-in-extensions/" class="docs-nav-link" >
+        Built-in Extensions</a>
+    </li>
+    
+  </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      
+      <option value="/docs/" >
+        Quick start</option>
+      
+    </optgroup>
+    <optgroup label="Main Concepts">
+      
+      <option value="/docs/application/" >
+        Application</option>
+      
+      <option value="/docs/routing/" selected>
+        Routing</option>
+      
+      <option value="/docs/response-handling/" >
+        Response handling</option>
+      
+      <option value="/docs/context/" >
+        Context</option>
+      
+      <option value="/docs/extensions/" >
+        Extensions</option>
+      
+    </optgroup>
+    <optgroup label="API">
+      
+      <option value="/docs/tuft-route-map/" >
+        TuftRouteMap</option>
+      
+      <option value="/docs/tuft-context/" >
+        TuftContext</option>
+      
+      <option value="/docs/tuft-server/" >
+        TuftServer</option>
+      
+      <option value="/docs/tuft-secure-server/" >
+        TuftSecureServer</option>
+      
+      <option value="/docs/create-promise/" >
+        createPromise()</option>
+      
+      <option value="/docs/response-object/" >
+        Response object</option>
+      
+      <option value="/docs/built-in-extensions/" >
+        Built-in Extensions</option>
+      
+    </optgroup>
+  </select>
+</section>
+
+  <section id="docs-content">
+    <h1>Routing</h1>
+    <p>Tuft is a route-based framework similar to <a href="https://hapi.dev" target="_blank">hapi</a>. When a client
+      requests a particular path, a Tuft server will first determine if there is a route that matches that path. If
+      there is, Tuft will generate a response based on a user-defined handler.</p>
+
+    <p>To add a route, call the route map's <code class="code-inline">.set()</code> method.</p>
+
+    <pre><code class="language-js">app.set('/foo', { status: 200 })</code></pre>
+
+    <p>In the above example, whenever a client submits a request with the path <code class="code-inline">'/foo'</code>,
+      the server will respond with a <code class="code-inline http-status">200 OK</code> status code and no body.</p>
+
+    <p>To add a route that only responds to a specific request method, prepend the path with the request method and a
+      space.</p>
+
+    <pre><code class="language-js">app.set('GET /foo', { status: 200 })</code></pre>
+
+    <p>See the <a href="/docs/tuft-route-map">TuftRouteMap</a> API section for more information on adding routes.
+    </p>
+
+    <h3 class="docs-sub-heading">Custom 404 handling</h3>
+
+    <p>If a client requests a route that doesn't exist, the server will respond to the client with a <code
+        class="code-inline http-status">404 Not Found</code> status code and an empty response body by default. You can override this behavior, or customize the 404
+      response, by adding a "catch-all" route.</p>
+
+    <pre><code class="language-js">app.set('/{**}', {
+  status: 404,
+  json: {
+    statusCode: 404,
+    message: 'Not Found'
+  }
+})</code></pre>
+    <p>The <code class="code-inline">'{**}'</code> in the path of the example above is a wildcard glob that matches all
+      text, including the text of sub-paths. Therefore, adding a route of <code class="code-inline">'/{**}'</code> with
+      no other path segments will match all routes that have not already been matched by a more specific route.</p>
+  </section>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>

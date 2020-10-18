@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/benchmarks/" />
+<meta property="og:url" content="https://www.tuft.dev/benchmarks/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/benchmarks/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="benchmarks">
+  <div id="benchmarks-container">
+    <h1 class="page-title">Benchmarks</h1>
+    <br>
+    <p>This page contains the benchmark results for Tuft compared with other popular Node.js web frameworks. For more
+      information on how the benchmarks were set up, and to view the specific application code
+      used for each framework, see the <a href="https://github.com/tuftjs/bench" target="_blank">GitHub repository</a>.
+    </p>
+    <p>The benchmark results below were obtained using <a href="https://github.com/mcollina/autocannon#readme"
+        target="_blank">AutoCannon</a>, and are ordered from fastest to slowest.</p>
+    <h2>Results</h2>
+    <ul class="docs-list">
+      <li><strong>Date:</strong> September 16, 2020</li>
+      <li><strong>Hardware:</strong> Digital Ocean CPU-optimized droplet</li>
+      <li><strong>OS:</strong> Ubuntu 20.04 (LTS) x64</li>
+      <li><strong>Node version:</strong> 12.18.4</li>
+      <li><strong>Client command:</strong> <code class="code-inline">autocannon -c 100 -d 40</code></li>
+    </ul>
+    <br>
+    <table class="pure-table pure-table-bordered">
+      <thead>
+        <tr>
+          <th>Framework</th>
+          <th>Version</th>
+          <th>Req/s</th>
+          <th>Bytes/s (MB)</th>
+          <th>Latency (ms)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pure-table-odd">
+          <td><em>none</em></td>
+          <td>N/A</td>
+          <td>22,474</td>
+          <td>3.48</td>
+          <td>4.08</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td><strong>Tuft</strong></td>
+          <td>2.3.1</td>
+          <td>20,872</td>
+          <td>3.23</td>
+          <td>4.17</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Fastify</td>
+          <td>3.4.1</td>
+          <td>18,858</td>
+          <td>2.92</td>
+          <td>5.08</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Koa</td>
+          <td>2.13.0</td>
+          <td>14,959</td>
+          <td>2.32</td>
+          <td>6.14</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Hapi</td>
+          <td>20.0.0</td>
+          <td>12,583</td>
+          <td>2.53</td>
+          <td>7.28</td>
+        </tr>
+        <tr class="pure-table-odd">
+          <td>Express</td>
+          <td>4.17.1</td>
+          <td>6,037</td>
+          <td>1.32</td>
+          <td>16.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>

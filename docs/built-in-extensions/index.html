@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/docs/built-in-extensions/" />
+<meta property="og:url" content="https://www.tuft.dev/docs/built-in-extensions/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/docs/built-in-extensions/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="docs">
+  <section id="docs-nav">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/" class="docs-nav-link" >
+        Quick start</a>
+    </li>
+    
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/application/" class="docs-nav-link" >
+        Application</a>
+    </li>
+    
+    <li>
+      <a href="/docs/routing/" class="docs-nav-link" >
+        Routing</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-handling/" class="docs-nav-link" >
+        Response handling</a>
+    </li>
+    
+    <li>
+      <a href="/docs/context/" class="docs-nav-link" >
+        Context</a>
+    </li>
+    
+    <li>
+      <a href="/docs/extensions/" class="docs-nav-link" >
+        Extensions</a>
+    </li>
+    
+  </ul>
+  <h4>API</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/tuft-route-map/" class="docs-nav-link" >
+        TuftRouteMap</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-context/" class="docs-nav-link" >
+        TuftContext</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-server/" class="docs-nav-link" >
+        TuftServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-secure-server/" class="docs-nav-link" >
+        TuftSecureServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/create-promise/" class="docs-nav-link" >
+        createPromise()</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-object/" class="docs-nav-link" >
+        Response object</a>
+    </li>
+    
+    <li>
+      <a href="/docs/built-in-extensions/" class="docs-nav-link current"
+        >
+        Built-in Extensions</a>
+    </li>
+    
+  </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      
+      <option value="/docs/" >
+        Quick start</option>
+      
+    </optgroup>
+    <optgroup label="Main Concepts">
+      
+      <option value="/docs/application/" >
+        Application</option>
+      
+      <option value="/docs/routing/" >
+        Routing</option>
+      
+      <option value="/docs/response-handling/" >
+        Response handling</option>
+      
+      <option value="/docs/context/" >
+        Context</option>
+      
+      <option value="/docs/extensions/" >
+        Extensions</option>
+      
+    </optgroup>
+    <optgroup label="API">
+      
+      <option value="/docs/tuft-route-map/" >
+        TuftRouteMap</option>
+      
+      <option value="/docs/tuft-context/" >
+        TuftContext</option>
+      
+      <option value="/docs/tuft-server/" >
+        TuftServer</option>
+      
+      <option value="/docs/tuft-secure-server/" >
+        TuftSecureServer</option>
+      
+      <option value="/docs/create-promise/" >
+        createPromise()</option>
+      
+      <option value="/docs/response-object/" >
+        Response object</option>
+      
+      <option value="/docs/built-in-extensions/" selected>
+        Built-in Extensions</option>
+      
+    </optgroup>
+  </select>
+</section>
+
+  <section id="docs-content">
+    <h1>Built-in extensions</h1>
+
+    <p>Tuft comes with a few built-in extensions as named exports. When you import a built-in extension, you are
+      importing a factory function that must be called to return the extension itself.</p>
+
+    <h3 class="docs-sub-heading">Prehandlers</h3>
+
+    <div class="api-entry">
+      <h3 id="search-params"><code>createSearchParams()</code></h3>
+      <p>Adds a <code class="code-inline">searchParams</code> property to the request object, set to an instance of
+        <code class="code-inline">URLSearchParams</code>, which contains any key/value pairs present in the query string
+        of the request URL.</p>
+      <pre><code class="language-js">const { createSearchParams } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createSearchParams()]
+})
+
+app.set('/', t => {
+  console.log(t.request.searchParams)
+})
+
+// A request for the path '/?foo=bar' will set 'searchParams' to the following:
+// URLSearchParams { 'foo' => 'bar' }</code></pre>
+    </div>
+
+    <div class="api-entry">
+      <h3 id="cookie-parser"><code>createCookieParser()</code></h3>
+      <p>Extracts key/value pairs from the cookie header and makes them available as the
+        <code class="code-inline">cookie</code> property in the request object.</p>
+      <pre><code class="language-js">const { createCookieParser } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createCookieParser()]
+})
+
+app.set('/foo', t => {
+  console.log(t.request.cookies)
+})</code></pre>
+    </div>
+
+    <div class="api-entry">
+      <h3 id="body-parser"><code>createBodyParser(type [, maxSize])</code></h3>
+      <p>By default, Tuft does not include the request body in the request object, as doing so has a significant
+        performance impact. <strong>Body parser</strong> is therefore provided as an optional prehandler extension that
+        can be added only to the routes that require it. If a request includes a body that matches the provided <code
+          class="code-inline">type</code>, then the parsed body data will be added to the request object as <code
+          class="code-inline">body</code>, unless the request body size is greater than that of the provided <code
+          class="code-inline">maxSize</code>.</p>
+      <pre><code class="language-js">const { createBodyParser } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createBodyParser('json')]
+})
+
+app.set('/', t => {
+  console.log(t.request.body)
+})</code></pre>
+      <p>The <code class="code-inline">type</code> argument can be any of the following:</p>
+      <div class="api-entry">
+        <h3><code>'raw'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/octet-stream'</code>, the body will be
+          parsed as a <code class="code-inline">Buffer</code> object.</p>
+      </div>
+
+      <div class="api-entry">
+        <h3><code>'text'</code></h3>
+        <p>If the request content type is <code class="code-inline">'text/*'</code>, the body will be parsed as a <code
+            class="code-inline">string</code>.</p>
+      </div>
+
+      <div class="api-entry">
+        <h3><code>'json'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/json'</code>, the body will be parsed
+          as an <code class="code-inline">object</code> using <code class="code-inline">JSON.parse()</code>.</p>
+      </div>
+
+      <div class="api-entry">
+        <h3><code>'urlEncoded'</code></h3>
+        <p>If the request content type is <code class="code-inline">'application/x-www-form-urlencoded'</code>, the body
+          will be parsed as an <code class="code-inline">object</code>.</p>
+      </div>
+
+      <p>The optional <code class="code-inline">maxSize</code> argument sets the maximum body size that can be parsed.
+        Request bodies of a greater size will be ignored. If not set, defaults to <code
+          class="code-inline">1048576</code> bytes (1 MiB).</p>
+    </div>
+
+    <div class="api-entry">
+      <h3 id="session"><code>createSession([options])</code></h3>
+      <p>Creates a session using the provided <code class="code-inline">options</code>. A session object will then be
+        added to every request, and all data within that object is persisted between requests from the same client.
+        Session data is stored on the server, and a cookie with a random session ID is set on the client.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createSession()]
+})
+
+app.set('/', t => {
+  const { session } = t.request
+  session.foo = 'bar'
+  return { json: session } // {"foo":"bar"}
+})</code></pre>
+      <p>By default, server side storage is simply an instance of <code class="code-inline">Map</code>, and is therefore
+        not intended for production environments. For a production environment, a custom <code
+          class="code-inline">store</code> can be provided. See the <em>options</em> information below for a detailed explanation.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+const myCustomStore = require('./custom-store')
+
+const app = tuft({
+  preHandlers: [createSession({
+    store: myCustomStore,
+  })]
+})
+
+app.set('/', t => {
+  const { session } = t.request
+  session.foo = 'bar'
+  return { json: session } // {"foo":"bar"}
+})</code></pre>
+      <p>The property name for the session object can be customized by providing the <code
+          class="code-inline">name</code> option.</p>
+      <pre><code class="language-js">const { createSession } = require('tuft')
+
+const app = tuft({
+  preHandlers: [createSession({
+    name: 'user'
+  })]
+})
+
+app.set('/', t => {
+  const { user } = t.request
+  user.id = '1234'
+  return { text: `Your user ID is ${user.id}` } // Your user ID is 1234
+})</code></pre>
+      <p>The <code class="code-inline">options</code> argument is an object that includes any of the following:</p>
+      <div class="api-entry">
+        <h3><code>name</code></h3>
+        <p>The property name that will be added to the Tuft request object.</p>
+        <p>Defaults to <code class="code-inline">'session'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cookieName</code></h3>
+        <p>A <code class="code-inline">string</code> that will be used as the key when setting the cookie. If not
+          provided, the cookie name will be set to the session name plus <code class="code-inline">'_id'</code>.</p>
+        <p>If no session or cookie name is provided, the cookie name will be set to <code
+            class="code-inline">'session_id'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cookieOptions</code></h3>
+        <p>An object consisting of the same options accepted by the <code class="code-inline">.setCookie()</code> method
+          of <a href="/docs/tuft-context/#set-cookie">TuftContext</a>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>encoding</code></h3>
+        <p>The encoding used when generating the random session ID. Must be one of either <code
+            class="code-inline">'base64'</code> or <code class="code-inline">'hex'</code>.</p>
+        <p>Defaults to <code class="code-inline">'base64'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>store</code></h3>
+        <p>A custom store implementation, which overrides the default behavior of using a JavaScript <code
+            class="code-inline">Map</code> as the store. The custom store <em>must</em> be an object with at least the
+          following three methods:</p>
+        <ul class="docs-list">
+          <li><code class="code-inline">.set(name, sessionObject)</code></li>
+          <p>Accepts a name and a session object, and stores the object indexed by that name. Returns <code
+              class="code-inline">undefined</code>, or a promise that resolves to <code
+              class="code-inline">undefined</code>.</p>
+          <li><code class="code-inline">.get(name)</code></li>
+          <p>Returns the session object (or a promise that resolves to the session object) indexed by the provided name.
+          </p>
+          <li><code class="code-inline">.delete(name)</code></li>
+          <p>Removes the session object indexed by the provided name from the store. Returns <code
+              class="code-inline">undefined</code>, or a promise that resolves to <code
+              class="code-inline">undefined</code>.</p>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="docs-sub-heading">Responders</h3>
+
+    <div class="api-entry">
+      <h3 id="stream-responder"><code>createStreamResponder()</code></h3>
+      <p>By default, Tuft only supports sending a single "chunk" of data as the response body, even if that chunk itself
+        ends up being split into smaller chunks by the the underlying Node runtime. For situations where this is not
+        ideal, the <em>stream responder</em> allows
+        you to send multiple chunks (i.e. write to a stream) by including your logic in a callback function.</p>
+
+      <p>You can utilize this responder by adding a <code class="code-inline">writeStream</code> property to the
+        response object and setting it to a callback function, which then accepts a <code
+          class="code-inline">write()</code> function as its first and only argument.</p>
+
+      <p><code class="code-inline">write()</code> can be called as many times as necessary to send chunks of data. Each
+        invocation will write the passed chunk of data to the response stream. The
+        response will end automatically when the callback function returns. It also optionally accepts the encoding type
+        (a <code class="code-inline">string</code>) as the second argument.</p>
+      <pre><code class="language-js">const { createStreamResponder } = require('tuft')
+
+const app = tuft({
+  responders: [createStreamResponder()]
+})
+
+app.set('/', () => {
+  return {
+    writeStream: write => {
+      write('Hello, ')
+      write('world!', 'UTF-8')  // Optionally set the encoding
+    }
+  }
+})</code></pre>
+    </div>
+  </section>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/docs/tuft-route-map/" />
+<meta property="og:url" content="https://www.tuft.dev/docs/tuft-route-map/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/docs/tuft-route-map/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="docs">
+  <section id="docs-nav">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/" class="docs-nav-link" >
+        Quick start</a>
+    </li>
+    
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/application/" class="docs-nav-link" >
+        Application</a>
+    </li>
+    
+    <li>
+      <a href="/docs/routing/" class="docs-nav-link" >
+        Routing</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-handling/" class="docs-nav-link" >
+        Response handling</a>
+    </li>
+    
+    <li>
+      <a href="/docs/context/" class="docs-nav-link" >
+        Context</a>
+    </li>
+    
+    <li>
+      <a href="/docs/extensions/" class="docs-nav-link" >
+        Extensions</a>
+    </li>
+    
+  </ul>
+  <h4>API</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/tuft-route-map/" class="docs-nav-link current"
+        >
+        TuftRouteMap</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-context/" class="docs-nav-link" >
+        TuftContext</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-server/" class="docs-nav-link" >
+        TuftServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-secure-server/" class="docs-nav-link" >
+        TuftSecureServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/create-promise/" class="docs-nav-link" >
+        createPromise()</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-object/" class="docs-nav-link" >
+        Response object</a>
+    </li>
+    
+    <li>
+      <a href="/docs/built-in-extensions/" class="docs-nav-link" >
+        Built-in Extensions</a>
+    </li>
+    
+  </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      
+      <option value="/docs/" >
+        Quick start</option>
+      
+    </optgroup>
+    <optgroup label="Main Concepts">
+      
+      <option value="/docs/application/" >
+        Application</option>
+      
+      <option value="/docs/routing/" >
+        Routing</option>
+      
+      <option value="/docs/response-handling/" >
+        Response handling</option>
+      
+      <option value="/docs/context/" >
+        Context</option>
+      
+      <option value="/docs/extensions/" >
+        Extensions</option>
+      
+    </optgroup>
+    <optgroup label="API">
+      
+      <option value="/docs/tuft-route-map/" selected>
+        TuftRouteMap</option>
+      
+      <option value="/docs/tuft-context/" >
+        TuftContext</option>
+      
+      <option value="/docs/tuft-server/" >
+        TuftServer</option>
+      
+      <option value="/docs/tuft-secure-server/" >
+        TuftSecureServer</option>
+      
+      <option value="/docs/create-promise/" >
+        createPromise()</option>
+      
+      <option value="/docs/response-object/" >
+        Response object</option>
+      
+      <option value="/docs/built-in-extensions/" >
+        Built-in Extensions</option>
+      
+    </optgroup>
+  </select>
+</section>
+
+  <section id="docs-content">
+    <h1>TuftRouteMap</h1>
+    <p>Instances of <code class="code-inline">TuftRouteMap</code> are not created directly, but are instead returned by
+      the function <code class="code-inline">tuft</code>, imported and invoked like so:</p>
+    <pre><code class="language-js">const { tuft } = require('tuft')
+const routes = tuft()</code></pre>
+
+    <p>An <code class="code-inline">options</code> object can be passed as the first and only argument.</p>
+    <pre><code class="language-js">const routes = tuft({
+  trailingSlash: true,
+  basePath: '/foo'
+})</code></pre>
+    <p>The <code class="code-inline">options</code> argument may contain any of the following properties:</p>
+    <div class="api-entry">
+      <div class="api-entry">
+        <h3><code>basePath</code><code class="code-data-type">string</code></h3>
+        <p>Prepended to the path of all routes that are added to the route map. If set to <code class="code-inline">'/foo'</code>, then a route with the path <code class="code-inline">'/bar'</code> would end up having a path of <code class="code-inline">'/foo/bar'</code>.</p>
+        <p>Defaults to an empty string.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cors</code><code class="code-data-type">boolean | CorsOptions</code></h3>
+        <p>
+          Enables CORS support for all routes that are added to the route map.
+        </p>
+        <p>
+          If set to <code class="code-inline">true</code>, CORS will be enabled for all origins and will support the methods DELETE, GET, HEAD, PATCH, POST, and PUT.
+        </p>
+        <p>
+          If set to an object, the following options are supported:
+        </p>
+        <div class="api-entry">
+          <h5><code>allowOrigin</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Origin</strong> response header. If set to an array of origins, then a request from any of the set origins will be accepted.
+          </p>
+          <p>
+            Defaults to <code class="code-inline">'*'</code>.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowMethods</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Methods</strong> response header. Can be set to a single method or an array of methods.
+          </p>
+          <p>
+            Defaults to <code class="code-inline">['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT']</code>.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowHeaders</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Headers</strong> response header. Can be set to a single method or an array of methods.
+          </p>
+          <p>
+            If not set, defaults to the headers provided by the request's <strong>Access-Control-Request-Headers</strong> header.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowCredentials</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Credentials</strong> response header. The only accepted value is <code class="code-inline">true</code>.
+          </p>
+          <p>
+            If not set, the header is not added to the response.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>exposeHeaders</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Expose-Headers</strong> response header. Can be set to a single header or an array of headers.
+          </p>
+          <p>
+            If not set, no additional headers will be exposed.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>maxAge</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Max-Age</strong> response header. Set to a number (in seconds).
+          </p>
+          <p>
+            If not set, the header is omitted from the response.
+          </p>
+        </div>
+      </div>
+      <div class="api-entry">
+        <h3><code>path</code><code class="code-data-type">string</code></h3>
+        <p>Used as the default value for <code class="code-inline">path</code> if one is not provided when adding a
+          route.
+        </p>
+        <p>Defaults to <code class="code-inline">'/'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
+        <p>An array of Tuft pre-handlers that are executed serially before the response handler. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
+        <p>Defaults to <code class="code-inline">[]</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>responders</code><code class="code-data-type">TuftResponder[]</code></h3>
+        <p>An array of Tuft responders that are executed serially after the response handler returns. A Tuft responder
+          is
+          a function which receives a response object, and then determines how to respond to the client based on the
+          properties included in that object. For more information, see the section on <a
+            href="/docs/extensions#responders">Tuft
+            responders</a>.</p>
+        <p>Defaults to <code class="code-inline">[]</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>trailingSlash</code><code class="code-data-type">boolean</code></h3>
+        <p>Match routes that have a trailing slash. If set to <code class="code-inline">true</code>, the route <code
+            class="code-inline">'/foo'</code> would be matched by both <code class="code-inline">'/foo'</code> and <code
+            class="code-inline">'/foo/'</code>.</p>
+        <p>Defaults to <code class="code-inline">null</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
+        <p>Indicates whether or not the application should trust the following incoming headers:</p>
+        <ul class="docs-list">
+          <li><code class="code-inline">'X-Forwarded-For'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Port'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
+        </ul>
+        <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
+        <p>Defaults to <code class="code-inline">true</code>.</p>
+      </div>
+    </div>
+
+    <h3 class="docs-sub-heading">Methods</h3>
+
+    <div class="api-entry">
+      <h3><code>.set(routeName, response)</code></h3>
+
+      <p>Accepts a string representing the route path as the first argument, with a specific request method or methods
+        optionally prepended, and a response object (or function that returns a response object) as the second argument.
+      </p>
+
+      <p>The following route will respond to all supported request methods when requesting path <code
+          class="code-inline">'/foo'</code>:</p>
+
+      <pre><code class="language-js">routes.set('/foo', {
+  status: 200
+})</code></pre>
+
+      <p>To add a route that responds to a specific request method, prepend the method name to the path, followed by a
+        space:</p>
+
+      <pre><code class="language-js">routes.set('GET /foo', {
+  status: 200
+})</code></pre>
+
+      <p>To add multiple methods, separate them with a vertical slash <code class="code-inline">'|'</code>:</p>
+
+      <pre><code class="language-js">// Add the routes 'GET /foo' and 'POST /foo'
+routes.set('GET|POST /foo', {
+  status: 200
+})</code></pre>
+      <blockquote>
+        <p>Tuft supports the following request methods:</p>
+
+        <ul class="docs-list">
+          <li>GET</li>
+          <li>HEAD</li>
+          <li>POST</li>
+          <li>PUT</li>
+          <li>PATCH</li>
+          <li>DELETE</li>
+          <li>OPTIONS</li>
+          <li>TRACE</li>
+        </ul>
+      </blockquote>
+
+      <p>Tuft also supports wildcard globs and named parameters in pathnames. To add a wildcard for a single path
+        segment,
+        use an asterisk enclosed between curly braces <code class="code-inline">{*}</code>, or use two asterisks to
+        represent a path segment and any successive segments <code class="code-inline">{**}</code>.</p>
+
+      <pre><code class="language-js">// Match '/foo' and '/bar', but not '/foo/bar'
+routes.set('GET /{*}', {
+  status: 200
+})
+
+// Match '/foo/bar' and '/foo/baz', but not '/bar/bar' or '/bar/baz'
+routes.set('GET /foo/{*}', {
+  status: 200
+})
+
+// Match '/foo/bar' and '/foo/bar/baz', but not '/bar/bar' or '/bar/bar/baz'
+routes.set('GET /foo/{**}', {
+  status: 200
+})</code></pre>
+
+      <p>To add a route with a named parameter, replace the single asterisk from the example above with the parameter
+        name. The parameter values will be made available in the <code class="code-inline">params</code> property of the
+        request object.</p>
+
+      <pre><code class="language-js">// Match '/users/1234'
+routes.set('GET /users/{id}', ({ request }) => {
+  console.log(request.params) // { id: '1234' }
+  return {
+    status: 200
+  }
+})</code></pre>
+
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.merge(routeMap)</code></h3>
+
+      <p>Accepts another instance of <code class="code-inline">TuftRouteMap</code>. All routes from the passed route map will be merged
+        with the current one.</p>
+
+      <pre><code class="language-js">const routes1 = tuft()
+routes1.set('GET /foo', {})
+
+const routes2 = tuft()
+routes2.merge(routes1) // routes2 now also includes the route 'GET /foo'</code></pre>
+
+      <p>There are some important things to note about how the values set in route map <code
+          class="code-inline">options</code> are handled when merging:</p>
+
+      <ul class="docs-list">
+        <li>If the current route map has the <code class="code-inline">basePath</code> option set, then the paths for
+          all merged routes will also have that base path prepended to them.</li>
+        <li>Any <code class="code-inline">preHandlers</code> and/or <code class="code-inline">responders</code> present
+          for the current route map will also be added to all the merged routes.</li>
+        <li>If a merged route already has the <code class="code-inline">trailingSlash</code> option set then it will be
+          preserved, otherwise it will inherit whatever has been set in the current route map.</li>
+      </ul>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.redirect(routeName, url)</code></h3>
+      <p>Redirects any requests for <code class="code-inline">routeName</code> to <code class="code-inline">url</code>,
+        which can be a relative path or an absolute URI.</p>
+      <pre><code class="language-js">// Redirect all GET requests for '/foo' to '/bar'
+routes.redirect('GET /foo', '/bar')
+
+// Redirect all GET requests for '/example' to 'https://www.example.com'
+routes.redirect('GET /example', 'https://www.example.com')</code></pre>
+      <p>Clients will be redirected with a <code class="code-inline http-status">302 Found</code> status code.</p>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.static(routeName, path)</code> <code class="code-data-type">async</code></h3>
+      <p>Serves static files from the provided route. Unlike other route map methods, <code
+          class="code-inline">routeName</code> should not include the request method in the string. Static files are
+        automatically served to <code class="code-inline">GET</code> and <code class="code-inline">HEAD</code> requests
+        only. Also unlike other route map methods, <code class="code-inline">.static()</code> returns a promise and so
+        should be called with the <code class="code-inline">await</code> keyword.</p>
+      <p><code class="code-inline">path</code> can be either a file path or directory path. If a file path, the file
+        will be available at the provided route path:</p>
+      <pre><code class="language-js">await routes.static('/images', 'assets/profile.png')
+// profile.png will be available at '/images/profile.png'</code></pre>
+      <p>If a directory path, all files within that directory (including subdirectories) will be available at the
+        provided route path:</p>
+      <pre><code class="language-js">// Assuming the 'assets' directory includes the files:
+// * profile.png
+// * styles.css
+// * favicon.ico
+
+await routes.static('/', 'assets')
+// The above files will be available at:
+// * '/profile.png'
+// * '/styles.css'
+// * '/favicon.ico'</code></pre>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.onError(callback)</code></h3>
+      <p>Adds a listener for errors that occur in the request/response cycle, executing <code
+          class="code-inline">callback</code> whenever they are emitted. Tuft catches synchronous exceptions and asynchronous rejections that occur in
+        the request/response cycle, or any errors that are emitted by the Node HTTP/2 stream object. It then responds to
+        the client with a <code class="code-inline http-status">500 Internal Server Error</code> status code, provided
+        the
+        connection is still open and the headers have not already been sent. The emitted <code
+          class="code-inline">Error</code> object is then passed to <code class="code-inline">callback</code> as its
+        first and only argument.</p>
+      <pre><code class="language-js">routes.onError(err => {
+  console.error(err) // Pipe the error to stderr
+})</code></pre>
+      <blockquote>
+        <h4>Note:</h4>
+        <p>At present, Tuft only supports a single error listener. Multiple calls to <code
+            class="code-inline">.onError()</code> will override the previously added callback.</p>
+      </blockquote>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.createServer([options])</code></h3>
+      <p>Returns an instance of <a href="/docs/tuft-server">TuftServer</a>, which is an <strong>HTTP</strong> server
+        instance that listens for and responds to requests based on the routes that were added to the route map. Accepts
+        an <code class="code-inline">options</code> argument, which is an object that may contain any of the following
+        properties:</p>
+      <div class="api-entry">
+        <h3><code>host</code><code class="code-data-type">string</code></h3>
+        <p>The host address the server should listen on.</p>
+        <p>Defaults to <code class="code-inline">'localhost'</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>port</code><code class="code-data-type">number</code></h3>
+        <p>The port the server should listen on.</p>
+        <p>Defaults to <code class="code-inline">0</code> (random port).</p>
+      </div>
+    </div>
+
+    <div class="api-entry">
+      <h3><code>.createSecureServer([options])</code></h3>
+      <p>Same as <code class="code-inline">.createServer()</code>, except that it returns an instance of <a
+          href="/docs/tuft-secure-server">TuftSecureServer</a>, which is an <strong>HTTPS</strong> server instance.
+        In addition to the options accepted by <code class="code-inline">.createServer()</code>, it also accepts the
+        following properties:</p>
+      <div class="api-entry">
+        <h3><code>key</code><code class="code-data-type">string</code></h3>
+        <p>A private key in <code class="code-inline">.pem</code> format.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cert</code><code class="code-data-type">string</code></h3>
+        <p>A certificate in <code class="code-inline">.pem</code> format.</p>
+      </div>
+      <blockquote>
+        <h4>Note:</h4>
+        <p>Although <code class="code-inline">key</code> and <code class="code-inline">cert</code> are listed as options
+          for <code class="code-inline">.createSecureServer()</code>, they are in fact required for a secure server to
+          function properly. Your server will not be able to respond to requests if you start a secure server without them.</p>
+      </blockquote>
+    </div>
+  </section>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>

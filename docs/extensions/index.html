@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/docs/extensions/" />
+<meta property="og:url" content="https://www.tuft.dev/docs/extensions/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/docs/extensions/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="docs">
+  <section id="docs-nav">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/" class="docs-nav-link" >
+        Quick start</a>
+    </li>
+    
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/application/" class="docs-nav-link" >
+        Application</a>
+    </li>
+    
+    <li>
+      <a href="/docs/routing/" class="docs-nav-link" >
+        Routing</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-handling/" class="docs-nav-link" >
+        Response handling</a>
+    </li>
+    
+    <li>
+      <a href="/docs/context/" class="docs-nav-link" >
+        Context</a>
+    </li>
+    
+    <li>
+      <a href="/docs/extensions/" class="docs-nav-link current"
+        >
+        Extensions</a>
+    </li>
+    
+  </ul>
+  <h4>API</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/tuft-route-map/" class="docs-nav-link" >
+        TuftRouteMap</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-context/" class="docs-nav-link" >
+        TuftContext</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-server/" class="docs-nav-link" >
+        TuftServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-secure-server/" class="docs-nav-link" >
+        TuftSecureServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/create-promise/" class="docs-nav-link" >
+        createPromise()</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-object/" class="docs-nav-link" >
+        Response object</a>
+    </li>
+    
+    <li>
+      <a href="/docs/built-in-extensions/" class="docs-nav-link" >
+        Built-in Extensions</a>
+    </li>
+    
+  </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      
+      <option value="/docs/" >
+        Quick start</option>
+      
+    </optgroup>
+    <optgroup label="Main Concepts">
+      
+      <option value="/docs/application/" >
+        Application</option>
+      
+      <option value="/docs/routing/" >
+        Routing</option>
+      
+      <option value="/docs/response-handling/" >
+        Response handling</option>
+      
+      <option value="/docs/context/" >
+        Context</option>
+      
+      <option value="/docs/extensions/" selected>
+        Extensions</option>
+      
+    </optgroup>
+    <optgroup label="API">
+      
+      <option value="/docs/tuft-route-map/" >
+        TuftRouteMap</option>
+      
+      <option value="/docs/tuft-context/" >
+        TuftContext</option>
+      
+      <option value="/docs/tuft-server/" >
+        TuftServer</option>
+      
+      <option value="/docs/tuft-secure-server/" >
+        TuftSecureServer</option>
+      
+      <option value="/docs/create-promise/" >
+        createPromise()</option>
+      
+      <option value="/docs/response-object/" >
+        Response object</option>
+      
+      <option value="/docs/built-in-extensions/" >
+        Built-in Extensions</option>
+      
+    </optgroup>
+  </select>
+</section>
+
+  <section id="docs-content">
+    <h1>Extensions</h1>
+    <p>Tuft extensions are split between two types: <em>prehandlers</em> and <em>responders</em>.</p>
+    <h3 class="docs-sub-heading" id="prehandlers">Prehandlers</h3>
+    <p>A prehandler is a function akin to a middleware function in frameworks such as <a href="https://expressjs.com"
+        target="_blank">Express</a> or <a href="https://koajs.com" target="_blank">Koa</a>. A route can have an array of
+      zero or more prehandler functions which are executed serially, in insertion order, before the response handler is
+      called. A <a href="/docs/tuft-context">TuftContext</a> object is passed as the first and only argument to each
+      prehandler. This enables you to share logic between multiple routes by writing your own prehandler functions, or
+      you can import prehandlers from external libraries that were written by yourself or other developers.</p>
+
+    <pre><code class="language-js">function myPreHandler(t) {
+  // my custom middleware logic
+}</code></pre>
+
+    <p>To add a prehandler to your route map, add it to an array and set that array as the value of the <code
+        class="code-inline">preHandlers</code> property in your <code class="code-inline">options</code> object when you create your application object.</p>
+
+    <pre><code class="language-js">const app = tuft({
+  preHandlers: [myPreHandler]
+})
+
+// 'myPreHandler' will be executed before all routes added to 'app'</code></pre>
+
+    <p>If a prehandler returns a response object, a response will be sent based on the properties in that object, and
+      all successive prehandlers (and the main response handler itself) will be bypassed. In the following example,
+      <code class="code-inline">preHandler1()</code> and <code class="code-inline">preHandler2()</code> will be
+      executed, but <code class="code-inline">preHandler3()</code> and <code class="code-inline">handler()</code> will
+      not.</p>
+
+    <pre><code class="language-js">function preHandler1() {
+  // custom middleware logic
+}
+
+function preHandler2() {
+  return { status: 400 }
+}
+
+function preHandler3() {
+  // custom middleware logic
+}
+
+function handler() {
+  return { status: 200 }
+}
+
+const app = tuft({
+  preHandlers: [
+    preHandler1,
+    preHandler2,
+    preHandler3
+  ]
+})
+
+app.set('/', handler) // This route will return a 400 status code</code></pre>
+
+    <p>While mofifying the passed <a href="/docs/tuft-context">TuftContext</a> object is supported, overriding
+      pre-existing properties is not.</p>
+
+    <pre><code class="language-js">function myPreHandler(t) {
+  // 'time' is not a pre-existing property, so this is fine
+  t.request.time = Date.now()
+
+  // Don't do this, as 'secure' is a pre-existing property
+  t.request.secure = true
+}</code></pre>
+    <p>Tuft comes packaged with the following built-in prehandlers that you can import:</p>
+    <ul class="docs-list">
+      <li><a href="/docs/built-in-extensions#search-params">Search params</a></li>
+      <li><a href="/docs/built-in-extensions#cookie-parser">Cookie parser</a></li>
+      <li><a href="/docs/built-in-extensions#body-parser">Body parser</a></li>
+      <li><a href="/docs/built-in-extensions#session">Session</a></li>
+    </ul>
+
+    <h3 class="docs-sub-heading" id="responders">Responders</h3>
+    <p>A responder is a function that accepts a <a href="/docs/response-object">response object</a> and then
+      optionally responds to the client based on its included data. It does this by utilizing the passed Node <a
+        href="https://nodejs.org/dist/latest-v12.x/docs/api/http.html#http_class_http_serverresponse" target="_blank">server
+        response</a> object.</p>
+
+    <pre><code class="language-js">function myResponder(tuftResponseObject, response) {
+  const { foo } = tuftResponseObject
+
+  if (foo !== undefined) {
+    response.statusCode = 200
+    response.write(foo)
+    response.end()
+  }
+
+  ...
+}</code></pre>
+
+    <p>To make use of a responder, add it to your route map by setting the <code class="code-inline">responders</code>
+      option to an array and including the responder in that array. It will then be executed before Tuft's built-in
+      response handling takes place.</p>
+
+    <pre><code class="language-js">const app = tuft({
+  responders: [
+    myResponder
+  ]
+})
+
+// 'myResponder' will be executed before Tuft's built-in responders</code></pre>
+    <p>Tuft comes packaged with one built-in responder that you can import:</p>
+    <ul class="docs-list">
+      <li><a href="/docs/built-in-extensions#stream-responder">Stream</a></li>
+    </ul>
+    <h4>How responders work</h4>
+    <p>A responder receives two parameters:</p>
+    <ul class="docs-list">
+      <li>the Tuft response object</li>
+      <li>the Node server response</li>
+    </ul>
+    <p>If the responder chooses not to respond to the client, it should return the passed Tuft response object. This signals
+      to the underlying framework that the response has not been sent. Otherwise, it should utilize the passed Node response stream to handle the response.</p>
+
+    <pre><code class="language-js">function myResponder(tuftResponseObject, response) {
+  const { foo } = tuftResponseObject
+
+  if (foo !== undefined) {
+    // The responder has decided to handle the response based
+    // on the presence of the property 'foo'
+    response.statusCode = 200
+    response.write(foo)
+    response.end()
+  }
+
+  else {
+    // The responder has decided not to handle the response,
+    // so the Tuft response object is returned
+    return tuftResponseObject
+  }
+}</code></pre>
+    <p>If there are multiple responders on a particular route, they will be executed in order until one of them fails to
+      return the response object.</p>
+  </section>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>

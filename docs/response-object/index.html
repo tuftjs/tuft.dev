@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tuft - a Node.js web framework</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tuft - a Node.js web framework" />
+<meta name="author" content="Stuart Kennedy" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://www.tuft.dev/docs/response-object/" />
+<meta property="og:url" content="https://www.tuft.dev/docs/response-object/" />
+<meta property="og:site_name" content="Tuft - a Node.js web framework" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tuft - a Node.js web framework" />
+<script type="application/ld+json">
+{"url":"https://www.tuft.dev/docs/response-object/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="header-margin left"></div>
+<header>
+  <div id="logo">
+    <h2>Tuft</h2>
+    <div id="latest-release-link-container">
+      <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
+        2.5.0</a>
+    </div>
+  </div>
+  <nav id="nav-bar">
+    <ul>
+      
+      <li >
+        <a class="nav-bar-link"  href="/">
+          Home
+        </a>
+      </li>
+      
+      <li class="current" >
+        <a class="nav-bar-link current"
+           href="/docs/">
+          Docs
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/extensions/">
+          Extensions
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/benchmarks/">
+          Benchmarks
+        </a>
+      </li>
+      
+      <li >
+        <a class="nav-bar-link"  href="/about/">
+          About
+        </a>
+      </li>
+      
+      <li id="github-link"><a class="nav-bar-link" href="https://github.com/tuftjs/tuft" target="_blank">GitHub&nbsp;</a><img
+          id="github-new-window-image" src="/assets/images/open_in_new-black-18dp.svg" alt="new window"></li>
+    </ul>
+  </nav>
+</header>
+<div class="header-margin right"></div>
+
+    <div class="main-margin left"></div>
+<main id="docs">
+  <section id="docs-nav">
+  <h4>GETTING STARTED</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/" class="docs-nav-link" >
+        Quick start</a>
+    </li>
+    
+  </ul>
+  <h4>MAIN CONCEPTS</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/application/" class="docs-nav-link" >
+        Application</a>
+    </li>
+    
+    <li>
+      <a href="/docs/routing/" class="docs-nav-link" >
+        Routing</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-handling/" class="docs-nav-link" >
+        Response handling</a>
+    </li>
+    
+    <li>
+      <a href="/docs/context/" class="docs-nav-link" >
+        Context</a>
+    </li>
+    
+    <li>
+      <a href="/docs/extensions/" class="docs-nav-link" >
+        Extensions</a>
+    </li>
+    
+  </ul>
+  <h4>API</h4>
+  <ul>
+    
+    <li>
+      <a href="/docs/tuft-route-map/" class="docs-nav-link" >
+        TuftRouteMap</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-context/" class="docs-nav-link" >
+        TuftContext</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-server/" class="docs-nav-link" >
+        TuftServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/tuft-secure-server/" class="docs-nav-link" >
+        TuftSecureServer</a>
+    </li>
+    
+    <li>
+      <a href="/docs/create-promise/" class="docs-nav-link" >
+        createPromise()</a>
+    </li>
+    
+    <li>
+      <a href="/docs/response-object/" class="docs-nav-link current"
+        >
+        Response object</a>
+    </li>
+    
+    <li>
+      <a href="/docs/built-in-extensions/" class="docs-nav-link" >
+        Built-in Extensions</a>
+    </li>
+    
+  </ul>
+</section>
+<section id="docs-nav-mobile">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <optgroup label="Getting Started">
+      
+      <option value="/docs/" >
+        Quick start</option>
+      
+    </optgroup>
+    <optgroup label="Main Concepts">
+      
+      <option value="/docs/application/" >
+        Application</option>
+      
+      <option value="/docs/routing/" >
+        Routing</option>
+      
+      <option value="/docs/response-handling/" >
+        Response handling</option>
+      
+      <option value="/docs/context/" >
+        Context</option>
+      
+      <option value="/docs/extensions/" >
+        Extensions</option>
+      
+    </optgroup>
+    <optgroup label="API">
+      
+      <option value="/docs/tuft-route-map/" >
+        TuftRouteMap</option>
+      
+      <option value="/docs/tuft-context/" >
+        TuftContext</option>
+      
+      <option value="/docs/tuft-server/" >
+        TuftServer</option>
+      
+      <option value="/docs/tuft-secure-server/" >
+        TuftSecureServer</option>
+      
+      <option value="/docs/create-promise/" >
+        createPromise()</option>
+      
+      <option value="/docs/response-object/" selected>
+        Response object</option>
+      
+      <option value="/docs/built-in-extensions/" >
+        Built-in Extensions</option>
+      
+    </optgroup>
+  </select>
+</section>
+
+  <section id="docs-content">
+    <h1>Response object</h1>
+    <p>The Tuft response object is an ordinary JavaScript object with no required properties. When you add a route, you
+      either define a response object, or you define a function that <em>returns</em> a response object (a response
+      <em>handler</em>). Tuft uses the properties of said object to determine how to respond to a
+      client request.</p>
+    <pre><code class="language-js">const response = {
+  status: 200,
+  text: 'Hello, world!'
+}
+
+app.set('GET /', response)
+
+// or
+
+app.set('GET /', () => {
+  return response
+})</code></pre>
+    <p>Tuft is able to handle the following response object properties (all optional):</p>
+    <div class="api-entry">
+      <h3><code>status</code><code class="code-data-type">number</code></h3>
+      <p>Sets the outgoing HTTP status code to the given value.</p>
+      <p>Defaults to <code class="code-inline">200</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>error</code><code class="code-data-type">string</code></h3>
+      <p>Responds to the client with an HTTP error status code, the value of which is determined by the provided string.
+        The string should be the name of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+          target="_blank">HTTP error</a> in all uppercase, with any spaces separated by an underscore.</p>
+      <p>For example, if <code class="code-inline">error</code> is set to <code class="code-inline">'NOT_FOUND'</code>,
+        the server will respond with a <code class="code-inline http-status">404 Not Found</code> status code.</p>
+      <p>All valid <code class="code-inline">4xx</code> and <code class="code-inline">5xx</code> codes are supported. If
+        an unsupported string value is provided, then the server will respond with <code
+          class="code-inline http-status">400 Bad Request</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>redirect</code><code class="code-data-type">string</code></h3>
+      <p>Responds to the client with a <code class="code-inline http-status">302 Found</code> status code and a <code
+          class="code-inline">'location'</code> header set to the provided value, which can either be a relative path or
+        an absolute URI.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>raw</code><code class="code-data-type">buffer</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code
+          class="code-inline">'content-type'</code> header of <code
+          class="code-inline">'application/octet-stream'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>text</code><code class="code-data-type">string | number | boolean</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code
+          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain; charset=UTF-8'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>html</code><code class="code-data-type">string</code></h3>
+      <p>Sets the response body to the provided value and adds an outgoing <code
+          class="code-inline">'content-type'</code> header of <code class="code-inline">'text/html; charset=UTF-8'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>json</code><code class="code-data-type">string | object</code></h3>
+      <p>Serializes the provided value to a JSON string (if it is already a string, then it is not modified), then sets the response body to that string. Adds an outgoing
+        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'application/json; charset=UTF-8'</code>.
+      </p>
+    </div>
+    <div class="api-entry">
+      <h3><code>file</code><code class="code-data-type">string</code></h3>
+      <p>Responds to the client with a file, where <code class="code-inline">file</code> is a pathname. Adds an outgoing
+        <code class="code-inline">'content-type'</code> header of <code class="code-inline">'text/plain; charset=UTF-8'</code>.</p>
+    </div>
+    <p>By default, any properties not listed above will be ignored. The <code class="code-inline">status</code> property
+      is the only one that can be used in conjunction with other properties (with the exception of <code
+        class="code-inline">error</code> and <code class="code-inline">redirect</code>).</p>
+    <p>If a response object with none of the supported properties is provided, the server will respond to the client
+      with a <code class="code-inline http-status">200 OK</code> status code and no response body.</p>
+    <p>If a Tuft <strong>responder</strong> has been defined on a given route, then it may accept other properties not
+      listed here, or even override them. See the section on <a href="/docs/extensions#responders">responders</a> for more
+      information.</p>
+  </section>
+</main>
+<div class="main-margin right"></div>
+
+    <div class="footer-margin left"></div>
+<footer>
+  <div class="footer-section">
+    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
+        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
+  </div>
+  <div class="footer-section right">
+    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
+    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
+  </div>
+</footer>
+<div class="footer-margin right"></div>
+
+  </div>
+  <script src="/assets/scripts/prism.js"></script>
+</body>
+
+</html>
