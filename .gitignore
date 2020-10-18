@@ -1,4 +1,3 @@
+node_modules
 _site
-Gemfile.lock
 .jekyll-cache
-.jekyll-metadata

@@ -21,11 +21,75 @@ const routes = tuft()</code></pre>
     <p>The <code class="code-inline">options</code> argument may contain any of the following properties:</p>
     <div class="api-entry">
       <div class="api-entry">
-        <h3><code>trailingSlash</code><code class="code-data-type">boolean</code></h3>
-        <p>Match routes that have a trailing slash. If set to <code class="code-inline">true</code>, the route <code
-            class="code-inline">'/foo'</code> would be matched by both <code class="code-inline">'/foo'</code> and <code
-            class="code-inline">'/foo/'</code>.</p>
-        <p>Defaults to <code class="code-inline">null</code>.</p>
+        <h3><code>basePath</code><code class="code-data-type">string</code></h3>
+        <p>Prepended to the path of all routes that are added to the route map. If set to <code class="code-inline">'/foo'</code>, then a route with the path <code class="code-inline">'/bar'</code> would end up having a path of <code class="code-inline">'/foo/bar'</code>.</p>
+        <p>Defaults to an empty string.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>cors</code><code class="code-data-type">boolean | CorsOptions</code></h3>
+        <p>
+          Enables CORS support for all routes that are added to the route map.
+        </p>
+        <p>
+          If set to <code class="code-inline">true</code>, CORS will be enabled for all origins and will support the methods DELETE, GET, HEAD, PATCH, POST, and PUT.
+        </p>
+        <p>
+          If set to an object, the following options are supported:
+        </p>
+        <div class="api-entry">
+          <h5><code>allowOrigin</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Origin</strong> response header. If set to an array of origins, then a request from any of the set origins will be accepted.
+          </p>
+          <p>
+            Defaults to <code class="code-inline">'*'</code>.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowMethods</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Methods</strong> response header. Can be set to a single method or an array of methods.
+          </p>
+          <p>
+            Defaults to <code class="code-inline">['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT']</code>.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowHeaders</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Headers</strong> response header. Can be set to a single method or an array of methods.
+          </p>
+          <p>
+            If not set, defaults to the headers provided by the request's <strong>Access-Control-Request-Headers</strong> header.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>allowCredentials</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Allow-Credentials</strong> response header. The only accepted value is <code class="code-inline">true</code>.
+          </p>
+          <p>
+            If not set, the header is not added to the response.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>exposeHeaders</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Expose-Headers</strong> response header. Can be set to a single header or an array of headers.
+          </p>
+          <p>
+            If not set, no additional headers will be exposed.
+          </p>
+        </div>
+        <div class="api-entry">
+          <h5><code>maxAge</code></h5>
+          <p>
+            Configures the <strong>Access-Control-Max-Age</strong> response header. Set to a number (in seconds).
+          </p>
+          <p>
+            If not set, the header is omitted from the response.
+          </p>
+        </div>
       </div>
       <div class="api-entry">
         <h3><code>path</code><code class="code-data-type">string</code></h3>
@@ -33,17 +97,6 @@ const routes = tuft()</code></pre>
           route.
         </p>
         <p>Defaults to <code class="code-inline">'/'</code>.</p>
-      </div>
-      <div class="api-entry">
-        <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
-        <p>Indicates whether or not the application should trust the following incoming headers:</p>
-        <ul class="docs-list">
-          <li><code class="code-inline">'X-Forwarded-For'</code></li>
-          <li><code class="code-inline">'X-Forwarded-Port'</code></li>
-          <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
-        </ul>
-        <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
-        <p>Defaults to <code class="code-inline">true</code>.</p>
       </div>
       <div class="api-entry">
         <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
@@ -59,6 +112,24 @@ const routes = tuft()</code></pre>
             href="/docs/extensions#responders">Tuft
             responders</a>.</p>
         <p>Defaults to <code class="code-inline">[]</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>trailingSlash</code><code class="code-data-type">boolean</code></h3>
+        <p>Match routes that have a trailing slash. If set to <code class="code-inline">true</code>, the route <code
+            class="code-inline">'/foo'</code> would be matched by both <code class="code-inline">'/foo'</code> and <code
+            class="code-inline">'/foo/'</code>.</p>
+        <p>Defaults to <code class="code-inline">null</code>.</p>
+      </div>
+      <div class="api-entry">
+        <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
+        <p>Indicates whether or not the application should trust the following incoming headers:</p>
+        <ul class="docs-list">
+          <li><code class="code-inline">'X-Forwarded-For'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Port'</code></li>
+          <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
+        </ul>
+        <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
+        <p>Defaults to <code class="code-inline">true</code>.</p>
       </div>
     </div>
 

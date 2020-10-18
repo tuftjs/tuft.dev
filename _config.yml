@@ -1,7 +1,12 @@
-title: Tuft - a Node.js web framework
 url: https://www.tuft.dev
+title: Tuft - a Node.js web framework
 author: Stuart Kennedy
-
+source: ./src
+sass:
+  sourcemap: development
+  style: compressed
 plugins:
+  - autoprefixer-rails
+  - jekyll-assets
   - jekyll-sitemap
   - jekyll-seo-tag
