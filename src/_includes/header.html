@@ -1,4 +1,4 @@
-<header>
+<header {% if page.url == '/' %} class="main-page" {% endif%}>
   <div id="logo">
     <h2>{{ site.data.main.title }}</h2>
     <div id="latest-release-link-container">

@@ -16,7 +16,9 @@
 <body>
   <div id="container">
     {% include header.html %}
-    {{ content }}
+    <div id="content-container">
+      {{ content }}
+    </div>
     {% include footer.html %}
   </div>
   <script src="/assets/scripts/prism.js"></script>
