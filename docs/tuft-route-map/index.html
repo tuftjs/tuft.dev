@@ -3,8 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="keywords" content="Tuft, TuftJS, http, web, framework, node, nodejs, node.js">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Tuft - a Node.js web framework</title>
 <meta name="generator" content="Jekyll v4.1.1" />
@@ -20,17 +25,11 @@
 {"url":"https://www.tuft.dev/docs/tuft-route-map/","@type":"WebPage","author":{"@type":"Person","name":"Stuart Kennedy"},"headline":"Tuft - a Node.js web framework","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
 </head>
 
 <body>
   <div id="container">
-    <div class="header-margin left"></div>
-<header>
+    <header>
   <div id="logo">
     <h2>Tuft</h2>
     <div id="latest-release-link-container">
@@ -77,7 +76,6 @@
     </ul>
   </nav>
 </header>
-<div class="header-margin right"></div>
 
     <div class="main-margin left"></div>
 <main id="docs">
@@ -228,117 +226,115 @@ const routes = tuft()</code></pre>
 })</code></pre>
     <p>The <code class="code-inline">options</code> argument may contain any of the following properties:</p>
     <div class="api-entry">
+      <h3><code>basePath</code><code class="code-data-type">string</code></h3>
+      <p>Prepended to the path of all routes that are added to the route map. If set to <code class="code-inline">'/foo'</code>, then a route with the path <code class="code-inline">'/bar'</code> would end up having a path of <code class="code-inline">'/foo/bar'</code>.</p>
+      <p>Defaults to an empty string.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>cors</code><code class="code-data-type">boolean | CorsOptions</code></h3>
+      <p>
+        Enables CORS support for all routes that are added to the route map.
+      </p>
+      <p>
+        If set to <code class="code-inline">true</code>, CORS will be enabled for all origins and will support the methods DELETE, GET, HEAD, PATCH, POST, and PUT.
+      </p>
+      <p>
+        If set to an object, the following options are supported:
+      </p>
       <div class="api-entry">
-        <h3><code>basePath</code><code class="code-data-type">string</code></h3>
-        <p>Prepended to the path of all routes that are added to the route map. If set to <code class="code-inline">'/foo'</code>, then a route with the path <code class="code-inline">'/bar'</code> would end up having a path of <code class="code-inline">'/foo/bar'</code>.</p>
-        <p>Defaults to an empty string.</p>
-      </div>
-      <div class="api-entry">
-        <h3><code>cors</code><code class="code-data-type">boolean | CorsOptions</code></h3>
+        <h5><code>allowOrigin</code></h5>
         <p>
-          Enables CORS support for all routes that are added to the route map.
+          Configures the <strong>Access-Control-Allow-Origin</strong> response header. If set to an array of origins, then a request from any of the set origins will be accepted.
         </p>
         <p>
-          If set to <code class="code-inline">true</code>, CORS will be enabled for all origins and will support the methods DELETE, GET, HEAD, PATCH, POST, and PUT.
+          Defaults to <code class="code-inline">'*'</code>.
+        </p>
+      </div>
+      <div class="api-entry">
+        <h5><code>allowMethods</code></h5>
+        <p>
+          Configures the <strong>Access-Control-Allow-Methods</strong> response header. Can be set to a single method or an array of methods.
         </p>
         <p>
-          If set to an object, the following options are supported:
+          Defaults to <code class="code-inline">['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT']</code>.
         </p>
-        <div class="api-entry">
-          <h5><code>allowOrigin</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Allow-Origin</strong> response header. If set to an array of origins, then a request from any of the set origins will be accepted.
-          </p>
-          <p>
-            Defaults to <code class="code-inline">'*'</code>.
-          </p>
-        </div>
-        <div class="api-entry">
-          <h5><code>allowMethods</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Allow-Methods</strong> response header. Can be set to a single method or an array of methods.
-          </p>
-          <p>
-            Defaults to <code class="code-inline">['DELETE', 'GET', 'HEAD', 'PATCH', 'POST', 'PUT']</code>.
-          </p>
-        </div>
-        <div class="api-entry">
-          <h5><code>allowHeaders</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Allow-Headers</strong> response header. Can be set to a single method or an array of methods.
-          </p>
-          <p>
-            If not set, defaults to the headers provided by the request's <strong>Access-Control-Request-Headers</strong> header.
-          </p>
-        </div>
-        <div class="api-entry">
-          <h5><code>allowCredentials</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Allow-Credentials</strong> response header. The only accepted value is <code class="code-inline">true</code>.
-          </p>
-          <p>
-            If not set, the header is not added to the response.
-          </p>
-        </div>
-        <div class="api-entry">
-          <h5><code>exposeHeaders</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Expose-Headers</strong> response header. Can be set to a single header or an array of headers.
-          </p>
-          <p>
-            If not set, no additional headers will be exposed.
-          </p>
-        </div>
-        <div class="api-entry">
-          <h5><code>maxAge</code></h5>
-          <p>
-            Configures the <strong>Access-Control-Max-Age</strong> response header. Set to a number (in seconds).
-          </p>
-          <p>
-            If not set, the header is omitted from the response.
-          </p>
-        </div>
       </div>
       <div class="api-entry">
-        <h3><code>path</code><code class="code-data-type">string</code></h3>
-        <p>Used as the default value for <code class="code-inline">path</code> if one is not provided when adding a
-          route.
+        <h5><code>allowHeaders</code></h5>
+        <p>
+          Configures the <strong>Access-Control-Allow-Headers</strong> response header. Can be set to a single method or an array of methods.
         </p>
-        <p>Defaults to <code class="code-inline">'/'</code>.</p>
+        <p>
+          If not set, defaults to the headers provided by the request's <strong>Access-Control-Request-Headers</strong> header.
+        </p>
       </div>
       <div class="api-entry">
-        <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
-        <p>An array of Tuft pre-handlers that are executed serially before the response handler. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
-        <p>Defaults to <code class="code-inline">[]</code>.</p>
+        <h5><code>allowCredentials</code></h5>
+        <p>
+          Configures the <strong>Access-Control-Allow-Credentials</strong> response header. The only accepted value is <code class="code-inline">true</code>.
+        </p>
+        <p>
+          If not set, the header is not added to the response.
+        </p>
       </div>
       <div class="api-entry">
-        <h3><code>responders</code><code class="code-data-type">TuftResponder[]</code></h3>
-        <p>An array of Tuft responders that are executed serially after the response handler returns. A Tuft responder
-          is
-          a function which receives a response object, and then determines how to respond to the client based on the
-          properties included in that object. For more information, see the section on <a
-            href="/docs/extensions#responders">Tuft
-            responders</a>.</p>
-        <p>Defaults to <code class="code-inline">[]</code>.</p>
+        <h5><code>exposeHeaders</code></h5>
+        <p>
+          Configures the <strong>Access-Control-Expose-Headers</strong> response header. Can be set to a single header or an array of headers.
+        </p>
+        <p>
+          If not set, no additional headers will be exposed.
+        </p>
       </div>
       <div class="api-entry">
-        <h3><code>trailingSlash</code><code class="code-data-type">boolean</code></h3>
-        <p>Match routes that have a trailing slash. If set to <code class="code-inline">true</code>, the route <code
-            class="code-inline">'/foo'</code> would be matched by both <code class="code-inline">'/foo'</code> and <code
-            class="code-inline">'/foo/'</code>.</p>
-        <p>Defaults to <code class="code-inline">null</code>.</p>
+        <h5><code>maxAge</code></h5>
+        <p>
+          Configures the <strong>Access-Control-Max-Age</strong> response header. Set to a number (in seconds).
+        </p>
+        <p>
+          If not set, the header is omitted from the response.
+        </p>
       </div>
-      <div class="api-entry">
-        <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
-        <p>Indicates whether or not the application should trust the following incoming headers:</p>
-        <ul class="docs-list">
-          <li><code class="code-inline">'X-Forwarded-For'</code></li>
-          <li><code class="code-inline">'X-Forwarded-Port'</code></li>
-          <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
-        </ul>
-        <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
-        <p>Defaults to <code class="code-inline">true</code>.</p>
-      </div>
+    </div>
+    <div class="api-entry">
+      <h3><code>path</code><code class="code-data-type">string</code></h3>
+      <p>Used as the default value for <code class="code-inline">path</code> if one is not provided when adding a
+        route.
+      </p>
+      <p>Defaults to <code class="code-inline">'/'</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
+      <p>An array of Tuft pre-handlers that are executed serially before the response handler. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
+      <p>Defaults to <code class="code-inline">[]</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>responders</code><code class="code-data-type">TuftResponder[]</code></h3>
+      <p>An array of Tuft responders that are executed serially after the response handler returns. A Tuft responder
+        is
+        a function which receives a response object, and then determines how to respond to the client based on the
+        properties included in that object. For more information, see the section on <a
+          href="/docs/extensions#responders">Tuft
+          responders</a>.</p>
+      <p>Defaults to <code class="code-inline">[]</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>trailingSlash</code><code class="code-data-type">boolean</code></h3>
+      <p>Match routes that have a trailing slash. If set to <code class="code-inline">true</code>, the route <code
+          class="code-inline">'/foo'</code> would be matched by both <code class="code-inline">'/foo'</code> and <code
+          class="code-inline">'/foo/'</code>.</p>
+      <p>Defaults to <code class="code-inline">null</code>.</p>
+    </div>
+    <div class="api-entry">
+      <h3><code>trustProxy</code><code class="code-data-type">boolean</code></h3>
+      <p>Indicates whether or not the application should trust the following incoming headers:</p>
+      <ul class="docs-list">
+        <li><code class="code-inline">'X-Forwarded-For'</code></li>
+        <li><code class="code-inline">'X-Forwarded-Port'</code></li>
+        <li><code class="code-inline">'X-Forwarded-Proto'</code></li>
+      </ul>
+      <p>If set to <code class="code-inline">false</code>, these headers will always be set to <code class="code-inline">undefined</code> on every incoming request.</p>
+      <p>Defaults to <code class="code-inline">true</code>.</p>
     </div>
 
     <h3 class="docs-sub-heading">Methods</h3>
@@ -544,18 +540,17 @@ await routes.static('/', 'assets')
 </main>
 <div class="main-margin right"></div>
 
-    <div class="footer-margin left"></div>
-<footer>
-  <div class="footer-section">
-    <p>The Tuft framework, this website, and all content therein are copyright &copy; 2020 under the terms of the <a
-        href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.</p>
-  </div>
-  <div class="footer-section right">
-    <p id="github-footer">View the project respository on <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.<br><br></p>
-    <p>Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
-  </div>
+    <footer>
+  <p>
+    The Tuft framework, this website, and all content therein are copyright <span class="copyright">&copy; 2020</span> under the terms of the <a href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.
+  </p>
+  <p>
+    Hosted by <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
+  </p>
+  <p id="github-footer">View the project respository on
+    <a href="https://github.com/tuftjs/tuft" target="_blank">GitHub</a>.
+  </p>
 </footer>
-<div class="footer-margin right"></div>
 
   </div>
   <script src="/assets/scripts/prism.js"></script>
