@@ -29,7 +29,7 @@
 
 <body>
   <div id="container">
-    <header>
+    <header >
   <div id="logo">
     <h2>Tuft</h2>
     <div id="latest-release-link-container">
@@ -77,8 +77,8 @@
   </nav>
 </header>
 
-    <div class="main-margin left"></div>
-<main id="docs">
+    <div id="content-container">
+      <main id="docs">
   <section id="docs-nav">
   <h4>GETTING STARTED</h4>
   <ul>
@@ -239,8 +239,8 @@ async function callStat() {
   <p>If possible, using Node's built-in <a href="https://nodejs.org/dist/latest/docs/api/util.html#util_util_promisify_original" target="_blank">promisify</a> function to convert a callback-based function to a promise-based function is preferred. <code class="code-inline">createPromise()</code> is intended solely as a convenience for situations where a method or function cannot be converted by <code class="code-inline">promisify()</code>.</p>
   </section>
 </main>
-<div class="main-margin right"></div>
 
+    </div>
     <footer>
   <p>
     The Tuft framework, this website, and all content therein are copyright <span class="copyright">&copy; 2020</span> under the terms of the <a href="https://github.com/tuftjs/tuft/blob/master/LICENSE" target="_blank">MIT License</a>.
