@@ -21,7 +21,7 @@ docs: true
       <pre><code class="language-js">const { createSearchParams } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSearchParams()]
+  prehandlers: [createSearchParams()]
 })
 
 app.set('/', t => {
@@ -39,7 +39,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createCookieParser } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createCookieParser()]
+  prehandlers: [createCookieParser()]
 })
 
 app.set('/foo', t => {
@@ -58,7 +58,7 @@ app.set('/foo', t => {
       <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createBodyParser('json')]
+  prehandlers: [createBodyParser('json')]
 })
 
 app.set('/', t => {
@@ -102,7 +102,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createSession } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSession()]
+  prehandlers: [createSession()]
 })
 
 app.set('/', t => {
@@ -117,7 +117,7 @@ app.set('/', t => {
 const myCustomStore = require('./custom-store')
 
 const app = tuft({
-  preHandlers: [createSession({
+  prehandlers: [createSession({
     store: myCustomStore,
   })]
 })
@@ -132,7 +132,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createSession } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSession({
+  prehandlers: [createSession({
     name: 'user'
   })]
 })
