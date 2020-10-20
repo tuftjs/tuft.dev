@@ -34,7 +34,7 @@
     <h2>Tuft</h2>
     <div id="latest-release-link-container">
       <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
-        2.5.0</a>
+        2.5.1</a>
     </div>
   </div>
   <nav id="nav-bar">
@@ -304,7 +304,7 @@ const routes = tuft()</code></pre>
       <p>Defaults to <code class="code-inline">'/'</code>.</p>
     </div>
     <div class="api-entry">
-      <h3><code>preHandlers</code><code class="code-data-type">TuftPreHandler[]</code></h3>
+      <h3><code>prehandlers</code><code class="code-data-type">TuftPrehandler[]</code></h3>
       <p>An array of Tuft pre-handlers that are executed serially before the response handler. For more information, see the section on <a href="/docs/extensions#pre-handlers">pre-handlers</a>.</p>
       <p>Defaults to <code class="code-inline">[]</code>.</p>
     </div>
@@ -433,7 +433,7 @@ routes2.merge(routes1) // routes2 now also includes the route 'GET /foo'</code><
       <ul class="docs-list">
         <li>If the current route map has the <code class="code-inline">basePath</code> option set, then the paths for
           all merged routes will also have that base path prepended to them.</li>
-        <li>Any <code class="code-inline">preHandlers</code> and/or <code class="code-inline">responders</code> present
+        <li>Any <code class="code-inline">prehandlers</code> and/or <code class="code-inline">responders</code> present
           for the current route map will also be added to all the merged routes.</li>
         <li>If a merged route already has the <code class="code-inline">trailingSlash</code> option set then it will be
           preserved, otherwise it will inherit whatever has been set in the current route map.</li>

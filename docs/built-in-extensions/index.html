@@ -34,7 +34,7 @@
     <h2>Tuft</h2>
     <div id="latest-release-link-container">
       <a href="https://github.com/tuftjs/tuft/releases" target="_blank">
-        2.5.0</a>
+        2.5.1</a>
     </div>
   </div>
   <nav id="nav-bar">
@@ -228,7 +228,7 @@
       <pre><code class="language-js">const { createSearchParams } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSearchParams()]
+  prehandlers: [createSearchParams()]
 })
 
 app.set('/', t => {
@@ -246,7 +246,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createCookieParser } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createCookieParser()]
+  prehandlers: [createCookieParser()]
 })
 
 app.set('/foo', t => {
@@ -265,7 +265,7 @@ app.set('/foo', t => {
       <pre><code class="language-js">const { createBodyParser } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createBodyParser('json')]
+  prehandlers: [createBodyParser('json')]
 })
 
 app.set('/', t => {
@@ -309,7 +309,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createSession } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSession()]
+  prehandlers: [createSession()]
 })
 
 app.set('/', t => {
@@ -324,7 +324,7 @@ app.set('/', t => {
 const myCustomStore = require('./custom-store')
 
 const app = tuft({
-  preHandlers: [createSession({
+  prehandlers: [createSession({
     store: myCustomStore,
   })]
 })
@@ -339,7 +339,7 @@ app.set('/', t => {
       <pre><code class="language-js">const { createSession } = require('tuft')
 
 const app = tuft({
-  preHandlers: [createSession({
+  prehandlers: [createSession({
     name: 'user'
   })]
 })
